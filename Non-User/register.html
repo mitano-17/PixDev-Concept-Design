@@ -1,0 +1,243 @@
+<html>
+	<head>
+		<title>pixDEV</title>
+		<link rel="icon" type="image/x-icon" href="../favicon.ico">
+		<link rel = "stylesheet" href = "../pixDEV_style_dark.css">
+
+		<style>
+
+			.display{
+				margin-left: 450px;
+				margin-right: 450px;
+			}
+
+			.section{
+				display: block;
+				text-align: center;
+			}
+
+			table{
+				color: white;
+				width: 560px;
+				margin: 30px;
+			}
+
+			.display p{
+				color: #4cb9ad;
+				font-size: 20px;
+			}
+
+			.signup{
+				font-size: 20px;
+				color: rgb(234, 66, 121);
+				text-decoration: none;
+			}
+
+			.note{
+				display: flex;
+				gap: 10px;
+				justify-content: center;
+				margin: 20px 0 40px 0;
+			}
+
+			.register{
+				text-align: center;
+				text-decoration: none;
+				background-color: rgb(234, 66, 121);
+				color: white;
+				font-size: 20px;
+				border: none;
+				padding: 10px;
+				width: 300px;
+				cursor: pointer;
+				margin: 20px 20px 20px 20px;
+			}
+
+			.register:hover{
+				background-color: rgb(180, 54, 128);
+				color: white;
+				transition:  0.25s;	
+			}
+
+			.register:active{
+				background-color: #4cb9ad;
+				color: white;
+				position: relative;	
+				left: 2px;
+				top: 2px;					
+			}
+
+			#birthday{
+				width: 350px;
+			}
+
+			.content_fields, #birthday{
+				padding: 10px;
+				width: 350px;
+			}
+
+			.content_fields:hover, #birthday:hover{
+				background-color: lightyellow;
+			}
+
+			.right_column{
+				text-align: right;
+			}
+
+			td{
+				padding: 10px 0 10px 0;
+			}
+
+			.terms_and_con{
+				display: flex;
+				margin: 30px;
+			}
+
+			input[type = text]:focus, input[type = password]:focus, input[type = date]:focus {
+			    background-color: lightyellow;
+			}
+		
+		</style>
+		<!-- Insert external CSS file here -->
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	
+	<body>
+	<div class = "myHeader">
+
+			<!--LEFT-->
+			<div class = "burger_menu">
+				<div id = "nav_menu">
+					<i class="fa fa-bars"></i>
+				</div>
+				<!--BURGER MENU-->
+				<div id ="burger_contents_div">
+					<i class="fa fa-bars"></i>
+					<img src = "../web_logo.png" width = 120px class = "menu_logo">
+					<div id = "burger_contents">
+						<a href="home.html">Home</a>
+						<a href="#">About Us</a>
+						<a href="#">Contact Us</a>
+						<a href="#">Terms of Service</a>
+						<a href="#">Privacy Policy</a>
+					</div>
+					<div id = "menu_design">
+						<img src = "../menu_design.png" id = "menu_art">
+						<p>pixDev @ 2022</p>
+					</div>
+				</div>
+			</div>
+			<a href="home.html"><img src = "../web_logo.png" width = 120px class = "logo"></a>
+
+			<form class = "search">
+				<input type = "text" placeholder = "Search..." name = "search_bar" class = "search_box">
+			</form>
+
+			<!--RIGHT-->
+			<div id = "login_reg_tab">
+				<div id = "button1">
+					<a href = "login.html">Login</a>
+				</div>
+				<div id = "button2">
+					<a href = "register.html">Register</a>
+				</div>
+			</div>
+
+			<a href = "#" id="to_top_button"><i class ="fa fa-arrow-up"></i></a>
+			
+		</div>
+		<br><br>
+		<!-- BODY -->
+		<div class = "display">
+			<h1>Register</h1>
+			<div class = "section">
+				<table>
+					<tr>
+						<td>
+							<label for="uname">Username</label>
+						</td>
+
+						<td class = "right_column">
+							<input type="text" placeholder="username" name="uname" required class = "content_fields">
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<label for="uname_ID">Username ID</label>
+						</td>
+
+						<td class = "right_column">
+							<input type="text" placeholder="username_ID" name="uname_ID" required class = "content_fields">
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<label for="email">Email Address</label>
+						</td>
+
+						<td class = "right_column">
+							<input type="text" placeholder="username@email" name="email" required class = "content_fields">
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<label for="psw">Password</label>
+						</td>
+							
+						<td class = "right_column">
+							<input type="password" placeholder="password" name="psw" required class = "content_fields">
+						</td>					
+					</tr>
+
+					<tr>
+						<td>
+							<label for="psw2">Confirm Password</label>
+						</td>
+							
+						<td class = "right_column">
+							<input type="password" placeholder="password" name="psw2" required class = "content_fields">
+						</td>					
+					</tr>
+
+					<tr>
+						<td>
+							<label for="birthday">Birthday</label>
+						</td>
+							
+						<td class = "right_column">
+							<form action="/action_page.php">
+								 <input type="date" id="birthday" name="birthday">
+							</form>
+						</td>					
+					</tr>
+				</table>
+
+				<div class = "terms_and_con">
+					<input type="checkbox" name="terms" class = "agreement"><p>I have read and understood the website's policies, terms and conditions, and user agreement.</p></input>
+				</div>
+
+				<div>
+					<button class="register" type="submit">Create Account</button>
+				</div>
+
+				<div>
+					<div class = "note">
+					<p>Already have an account?</p>
+					<a href = "login.html" class = "signup">Login here</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--FOOTER PART-->
+		<div class = "myFooter">
+			<p>pixDev @ 2022</p>
+		</div>
+	</body>
+	
+</html>

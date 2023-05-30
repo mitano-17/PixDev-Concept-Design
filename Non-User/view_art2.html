@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>pixDEV</title>
+		<!-- Insert external CSS file here -->
+        <link rel = "stylesheet" href = "../pixDEV_style_dark.css">
+        <link rel="icon" type="image/x-icon" href="../favicon.ico">
+        <style>
+        	.division{
+        		display: block;
+        	}
+
+        	.display #artwork{
+				padding-left: 100px;
+				padding-right: 100px;
+				padding-top: 60px;
+				padding-bottom: 60px;
+				border-bottom: 2px solid rgb(71, 57, 92);
+			}
+
+			.display #artwork img{
+				width: 100%;
+				height: auto;
+			}
+
+			.display .description{
+				padding: 30px;
+				color: white;
+				border-bottom: 2px solid rgb(71, 57, 92);
+			}
+
+			.display .user_display{
+				margin-top: 30px;
+				margin-bottom: 30px;
+				height:  80px;
+				padding-left: 30px;
+				padding-right: 30px;
+				border-bottom: 2px solid rgb(71, 57, 92);
+			}
+
+			.display .user_display img{
+				width:  50px;
+				height:  50px;
+				float:  left;
+				margin-right: 10px;
+				margin-top: 10px;
+			}
+
+			.display .user_display #username_profile{
+				margin-bottom: 0;
+				color: white;
+			}
+
+			.display .user_display h5{
+				color: rgb(234, 66, 121);
+				margin-top: -5px;
+			}
+
+			#statistics{
+				display: flex;
+				justify-content: right;
+				margin: -60px;
+			}
+
+			#statistics > div {
+				margin: 10px;
+				padding: 20px;
+			}
+
+			#statistics span{
+				color: rgb(180, 157, 180);
+			}
+
+			.display i{
+				color: rgb(180, 157, 180)
+			}
+
+			.comment_box{
+				margin-left: 150px;
+				margin-right: 150px;
+				margin-top: 20px;
+			}
+
+			h2{
+				color: #4cb9ad;
+			}
+
+			.comments{
+				background-color: rgb(37, 26, 38);
+				margin-left: 150px;
+				margin-right: 150px;
+				margin-top: 30px;
+				margin-bottom: 30px;
+				border: 2px solid rgb(71, 57, 92);
+				padding:  30px;
+			}
+
+			.replies{
+				background-color: rgb(37, 26, 38);
+				margin-left: 300px;
+				margin-right: 150px;
+				margin-top: 30px;
+				margin-bottom: 30px;
+				border: 2px solid rgb(71, 57, 92);
+				padding:  30px;
+			}
+
+			.comments img{
+				width: 50px;
+				height: 50px;
+				float:  left;
+			}
+
+			.replies img{
+				width: 50px;
+				height: 50px;
+				float:  left;
+			}
+
+			.username_responses{
+				margin-left: 60px;
+				color: #4cb9ad;
+			}
+
+			.replies #responses{
+				color: white;
+				margin-top: 20px;
+			}
+
+			.comments #responses{
+				color: white;
+				margin-top: 20px;
+			}
+
+			.comment_options{
+				margin-top: 20px;
+				display: inline-flex;
+				gap: 30px;
+			}
+
+			.comment_options p{
+				color: rgb(180, 157, 180);
+			}
+
+			.comments a, .replies a{
+				color: rgb(234, 66, 121);
+				text-decoration: none;
+			}
+
+			.comments a:hover, .replies	a:hover{
+				color: #4cb9ad;
+			}
+
+			#comment_box{
+				margin-top: 20px;
+				width: 100%;
+				background-color: white;
+				border: 2px solid rgb(71, 57, 92);
+				padding: 20px;
+			}
+
+			.button_submit{
+				display: flex;
+				justify-content: right;
+			}
+
+			#submit_button{
+				justify-content: right;
+				margin-top: 20px;
+				background-color: rgb(234, 66, 121);
+				color: white;
+				font-size: 20px;
+				border: none;
+				padding: 10px;
+				width: 100px;
+			}
+
+			#submit_button:hover{
+				background-color: rgb(180, 54, 128);
+				cursor: pointer;
+				transition-duration: 0.25s;
+			}
+
+			#submit_button:active{
+				background-color: #4cb9ad;
+				position: relative;
+				left: 2px;
+				top: 2px;
+			}
+
+			#comment_box:hover {
+			    background-color: lightyellow;
+			}
+
+			#comment_box:focus {
+			    background-color: lightyellow;
+			}
+
+			#buttons{
+				display:  flex;
+				justify-content: right;
+				gap: 20px;
+			}
+
+			#edit_button{
+				text-align: center;
+				text-decoration: none;
+				background-color: rgb(71, 57, 92);
+				color: white;
+				font-size: 20px;
+				border: none;
+				padding: 10px;
+				width: 150px;
+				margin: 20px;
+			}
+
+			#edit_button:hover{
+				background-color: #4cb9ad;
+				color: rgb(37, 26, 38);
+				transition:  0.25s;
+			}
+
+			.tags{
+				display: flex;
+				gap: 20px;
+				margin: 20px;
+
+			}
+
+			.tags a{
+				color: rgb(180, 157, 180);
+				text-decoration: none;
+			}
+
+			.tags a:hover{
+				color: rgb(234, 66, 121);
+			}
+        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+
+	<body>
+		<!--HEADER PART-->
+		<div class = "myHeader">
+
+			<!--LEFT-->
+			<div class = "burger_menu">
+				<div id = "nav_menu">
+					<i class="fa fa-bars"></i>
+				</div>
+				<!--BURGER MENU-->
+				<div id ="burger_contents_div">
+					<i class="fa fa-bars"></i>
+					<img src = "../web_logo.png" width = 120px class = "menu_logo">
+					<div id = "burger_contents">
+						<a href="home.html">Home</a>
+						<a href="#">About Us</a>
+						<a href="#">Contact Us</a>
+						<a href="#">Terms of Service</a>
+						<a href="#">Privacy Policy</a>
+					</div>
+					<div id = "menu_design">
+						<img src = "../menu_design.png" id = "menu_art">
+						<p>pixDev @ 2022</p>
+					</div>
+				</div>
+			</div>
+			<a href="home.html"><img src = "../web_logo.png" width = 120px class = "logo"></a>
+
+			<form class = "search">
+				<input type = "text" placeholder = "Search..." name = "search_bar" class = "search_box">
+			</form>
+
+			<!--RIGHT-->
+			<div id = "login_reg_tab">
+				<div id = "button1">
+					<a href = "login.html">Login</a>
+				</div>
+				<div id = "button2">
+					<a href = "register.html">Register</a>
+				</div>
+			</div>
+
+			<a href = "#" id="to_top_button"><i class ="fa fa-arrow-up"></i></a>
+			
+		</div>
+		<!--BODY DIVISION-->
+		<div class = "display">
+
+			<h1>Calligraphy#73</h1>
+
+			<div class = "division">
+				<div id = "artwork">
+					<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F78.media.tumblr.com%2Fb454a855f9f46cf12c226cadfee81948%2Ftumblr_p0pd5gxsvf1wrekboo1_500.jpg&f=1&nofb=1">
+				</div>
+
+				<p class = "description">何時間も懸命に働いた後、私は一歩下がって自分の将来について考えることにしました。 今のところあまり気分が良くありませんが、戻ってきたらいいなと思います。<br><br>After hours of hard work, I decided to take a step back and think about my future. I don't feel so good as of now but hopefully I will get back.</p>
+
+				<div class = "user_display">
+					<img src = "./gekkouga-san/avatar.png">
+
+					<a href = "./gekkouga-san/gekkouga-san.html"><h3 id = "username_profile">gekkouga-san</h3></a>
+					<h5>@gre658</h5>
+
+					<div id="statistics">
+						<div id="date">
+							<span>May 02, 2022</span>
+						</div>
+
+						<div id="time">
+							<span>23:23</span>
+						</div>
+
+						<div id="favourites">
+							<i class="fa fa-heart"></i>
+							<span>18</span>
+						</div>
+
+						<div id="comment">
+							<i class="fa fa-comment"></i>
+							<span>46</span>
+						</div>
+						
+
+						<div id="views">
+							<i class="fa fa-eye"></i>
+							<span>565</span>
+						</div>
+					</div>
+				</div>
+				<div class = "tags">
+					<div>
+						<a href = "./search_results2.html">#calligraphy</a>
+					</div>
+					<div>
+						<a href = "#">#typography</a>
+					</div>
+					<div>
+						<a href = "#">#handwriting</a>
+					</div>
+					<div>
+						<a href = "#">#traditional</a>
+					</div>
+					<div>
+						<a href = "#">#2022</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--COMMENT SECTION-->
+		<div class = "comment_box">
+			<h2>Comments</h2>
+		</div>
+
+		<div class = "comments">
+			<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpre00.deviantart.net%2F27d9%2Fth%2Fpre%2Ff%2F2016%2F327%2Fd%2F6%2Fstarters_part_one__charmander_tf__by_maxwellromero-dapcjkd.png&f=1&nofb=1">
+			<a href="#"><h3 class = "username_responses">hitokage</h3></a>
+			<p id = "responses">ヽ(°〇°)ﾉ とてもかわいいWAAAAAあなたはもっと愛と認識に値する!!!</p>
+			<div class = "comment_options">
+				<div><p>May 16, 2022</p></div>
+				<div><p>22:51</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "./gekkouga-san/avatar.png">
+			<a href="./gekkouga-san/gekkouga-san.html"><h3 class = "username_responses">gekkouga-san</h3></a>
+			<p id = "responses">どうもありがとう！ 大変な時を支えてくれてありがとう。 ♡♡♡</p>
+			<div class = "comment_options">
+				<div><p>May 17, 2022</p></div>
+				<div><p>8:56</p></div>
+			</div>
+		</div>
+
+		<div class = "comments">
+			<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.pokemonpets.com%2Fimages%2Fmonsters-images-800-800%2F7-Squirtle.png&f=1&nofb=1">
+			<a href="#"><h3 class = "username_responses">zenigame</h3></a>
+			<p id = "responses">すごいいいいいい! ! !</p>
+			<div class = "comment_options">
+				<div><p>May 13, 2022</p></div>
+				<div><p>20:22</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "./gekkouga-san/avatar.png">
+			<a href="./gekkouga-san/gekkouga-san.html"><h3 class = "username_responses">gekkouga-san</h3></a>
+			<p id = "responses">ありがとうございました！</p>
+			<div class = "comment_options">
+				<div><p>May 14, 2022</p></div>
+				<div><p>7:34</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.pokemonpets.com%2Fimages%2Fmonsters-images-800-800%2F7-Squirtle.png&f=1&nofb=1">
+			<a href="#"><h3 class = "username_responses">zenigame</h3></a>
+			<p id = "responses">問題ない！ がんばり続ける！(☆⊙∇⊙)爻(⊙∇⊙☆)</p>
+			<div class = "comment_options">
+				<div><p>May 14, 2022</p></div>
+				<div><p>12:23</p></div>
+			</div>
+		</div>
+
+		<div class = "comments">
+			<img src = "charizard/avatar.png">
+			<a href="#"><h3 class = "username_responses">charizard</h3></a>
+			<p id = "responses">The **** do these all mean? Sorry I don't speak feces</p>
+			<div class = "comment_options">
+				<div><p>May 3, 2022</p></div>
+				<div><p>14:04</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "./gekkouga-san/avatar.png">
+			<a href="./gekkouga-san/gekkouga-san.html"><h3 class = "username_responses">gekkouga-san</h3></a>
+			<p id = "responses">LEAVE ME THE **** ALONE PLEASE!!</p>
+			<div class = "comment_options">
+				<div><p>May 3, 2022</p></div>
+				<div><p>21:21</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "charizard/avatar.png">
+			<a href="#"><h3 class = "username_responses">charizard</h3></a>
+			<p id = "responses">lol says who?</p>
+			<div class = "comment_options">
+				<div><p>May 3, 2022</p></div>
+				<div><p>21:45</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "./gekkouga-san/friend_avatar.png">
+			<a href="#"><h3 class = "username_responses">brigaron</h3></a>
+			<p id = "responses">You again?! **** OFF!</p>
+			<div class = "comment_options">
+				<div><p>May 3, 2022</p></div>
+				<div><p>22:00</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "charizard/avatar.png">
+			<a href="#"><h3 class = "username_responses">charizard</h3></a>
+			<p id = "responses">Are you a simp? You seem like it LOL</p>
+			<div class = "comment_options">
+				<div><p>May 5, 2022</p></div>
+				<div><p>1:18</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "./gekkouga-san/friend_avatar.png">
+			<a href="#"><h3 class = "username_responses">brigaron</h3></a>
+			<p id = "responses">Hey, dumb***! I believe the proper term is "being a friend". Do you even know what a friend is?</p>
+			<div class = "comment_options">
+				<div><p>May 5, 2022</p></div>
+				<div><p>2:34</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "charizard/avatar.png">
+			<a href="#"><h3 class = "username_responses">charizard</h3></a>
+			<p id = "responses">Yeah, "friends with benefits" seems like your goto. You prolly dont have friends that's y u simp over a frog</p>
+			<div class = "comment_options">
+				<div><p>May 6, 2022</p></div>
+				<div><p>14:15</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "./gekkouga-san/friend_avatar.png">
+			<a href="#"><h3 class = "username_responses">brigaron</h3></a>
+			<p id = "responses">What part of dumb*** don't you understand? The dumb or the ***?</p>
+			<div class = "comment_options">
+				<div><p>May 6, 2022</p></div>
+				<div><p>17:13</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "charizard/avatar.png">
+			<a href="#"><h3 class = "username_responses">charizard</h3></a>
+			<p id = "responses">idk ask ur mother lol</p>
+			<div class = "comment_options">
+				<div><p>May 6, 2022</p></div>
+				<div><p>19:18</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "./gekkouga-san/friend_avatar.png">
+			<a href="#"><h3 class = "username_responses">brigaron</h3></a>
+			<p id = "responses">Gosh, you're an insufferable little ****!!!</p>
+			<div class = "comment_options">
+				<div><p>May 6, 2022</p></div>
+				<div><p>23:13</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "./gekkouga-san/avatar.png">
+			<a href="./gekkouga-san/gekkouga-san.html"><h3 class = "username_responses">gekkouga-san</h3></a>
+			<p id = "responses"><a href = "#">@charcool006</a> WHY ARE YOU ALWAYS ON MY CASE?!</p>
+			<div class = "comment_options">
+				<div><p>May 6, 2022</p></div>
+				<div><p>23:45</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "charizard/avatar.png">
+			<a href="#"><h3 class = "username_responses">charizard</h3></a>
+			<p id = "responses">Why are you always screaming lol can't hear you. Goes to show how weak of a character you are.</p>
+			<div class = "comment_options">
+				<div><p>May 7, 2022</p></div>
+				<div><p>00:03</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "./gekkouga-san/avatar.png">
+			<a href="./gekkouga-san/gekkouga-san.html"><h3 class = "username_responses">gekkouga-san</h3></a>
+			<p id = "responses">Please I don't want anything to do with you.. You've brought trauma to me throughout the years and I'm always fearing for my life that at some point you'd be back to harm me...<br><br>Leave me alone. I'm tired of having a stressful life, and things got worse the moment you interact with me..<br><br>I beg you. Stop talking to me. I just want to be in a peaceful place doing my hobbies...</p>
+			<div class = "comment_options">
+				<div><p>May 8, 2022</p></div>
+				<div><p>19:58</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "charizard/avatar.png">
+			<a href="#"><h3 class = "username_responses">charizard</h3></a>
+			<p id = "responses">The **** do you mean by "peaceful place" LOOOL I don't understand your two-faced demeanor. Stop trying to hide your tracks by being all cutesy wootsy. Your feelings aint ****!!</p>
+			<div class = "comment_options">
+				<div><p>May 8, 2022</p></div>
+				<div><p>20:18</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "./gekkouga-san/avatar.png">
+			<a href="./gekkouga-san/gekkouga-san.html"><h3 class = "username_responses">gekkouga-san</h3></a>
+			<p id = "responses">DON'T YOU DARE TALK TO ME LIKE THAT! WHO DO YOU THINK YOU ARE?!<br><br>YOU'RE THE REASON WHY I LEFT THE ACTING INDUSTRY! YOUR ARROGANCE AND WRONGDOINGS DRIVE ME NUTS I CAN'T COMPREHEND WHY SO MANY PEOPLE LIKE AND PRAISE YOU AND YOU STAR IN ALMOST ALL SEASONS FROM THAT SHOW!<br><br>AREN'T 24 SEASONS ENOUGH FOR YOU, YOU GREEDY PIG?! WHY DO YOU HAVE TO BE AN *** TRYING TO TAKE AWAY MY CHANCE FOR A 4TH SEASONAL APPEARANCE?!</p>
+			<div class = "comment_options">
+				<div><p>May 8, 2022</p></div>
+				<div><p>21:47</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "charizard/avatar.png">
+			<a href="#"><h3 class = "username_responses">charizard</h3></a>
+			<p id = "responses">Look who's talking. You act like the victim in this situation and you always act like you did nothing wrong and everyone around you are the ***holes.You know I can see through your bs that you left the show because everyone didn't kiss your *** well enough to get what you want and now you're mad at me because I "stole" your spotlight, which is a lie. It's a lie your telling yourself. No ****. You were mad because people didn't like you in the first place so you went out of your way to suck up with the more famous actors, and that includes me. I remember you were sucking up to me and a few other people to get into Smash Bros, which you did successfully unfortunately. <br><br>And that's only the top layer of the ice berg, *****. You always put yourself in more prestigious roles without even knowing your limits so anything bad that happens will always be your fault. All that stress, tears, and pressure, yeah that's your fault. Your a user. Your a self-absorbed attention-seeker. Your an insecure brat. It totally baffles me why you lack some basic sense of self-awareness when you pride yourself as a helper. No your not a helper your an abuser. You use others to get what you want and then get pissy when all else fails.<br><br>Stop with all these fake bs you're putting. There's always a reason why **** happens and you contributed to the problem.</p>
+			<div class = "comment_options">
+				<div><p>May 9, 2022</p></div>
+				<div><p>13:18</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "./gekkouga-san/avatar.png">
+			<a href="./gekkouga-san/gekkouga-san.html"><h3 class = "username_responses">gekkouga-san</h3></a>
+			<p id = "responses">You're a horrible person!! Stop targeting me! Stop harassing me! STOP!! JUST STOP!!<br><br>I DIDN'T USE PEOPLE! NEVER! I AM NOT AN ABUSER! YOU'RE THE ONE WHO USES OTHERS TO GET WHAT YOU WANT! STOP PROJECTING!!</p>
+			<div class = "comment_options">
+				<div><p>May 9, 2022</p></div>
+				<div><p>20:04</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "charizard/avatar.png">
+			<a href="#"><h3 class = "username_responses">charizard</h3></a>
+			<p id = "responses">No I will not stop! You deserve to be called out! I like how you start throwing random **** at me saying I'm projecting. Goes to show how much my statements hit you like a brick.Your in denial. Stop acting all innocent and ****. You rigged the 2020 polls so you end up at #1 even though you barely contributed anything significant in the show. You faked your way out to get into Smash Bros because you wanted to get to the same level as me and the other famous actors. No, you didn't care about other people. You only care about yourself so you don't care if others are affected. Stop convincing yourself you did nothing wrong. Oh, and btw, I like how you pretended to be sad and **** when your other "friends" didn't gain much recognition like you did during your 1st season when in fact you don't give two ****s on helping them out to be better actors. You just sit there being a **** craving all the attention you get from the world. You don't give a ****. Quit being such a little piece of ****, you b****!</p>
+			<div class = "comment_options">
+				<div><p>May 9, 2022</p></div>
+				<div><p>22:03</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fyt3.ggpht.com%2Fa%2FAATXAJzrpwZJs5j0Uu-5SpgWat5Ocv0pEq0BpH5ryg%3Ds900-c-k-c0xffffffff-no-rj-mo&f=1&nofb=1">
+			<a href="#"><h3 class = "username_responses">wisecrack</h3></a>
+			<p id = "responses">Wow, such powerful statements right there, buddy. I have been enlightened! Are you talking about yourself?</p>
+			<div class = "comment_options">
+				<div><p>May 11, 2022</p></div>
+				<div><p>7:30</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "charizard/avatar.png">
+			<a href="#"><h3 class = "username_responses">charizard</h3></a>
+			<p id = "responses">Oh no another simp on the loose! Better call the wahmbulance cuz y'all cryin' your ***dump here is getting burned.</p>
+			<div class = "comment_options">
+				<div><p>May 11, 2022</p></div>
+				<div><p>17:18</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fyt3.ggpht.com%2Fa%2FAATXAJzrpwZJs5j0Uu-5SpgWat5Ocv0pEq0BpH5ryg%3Ds900-c-k-c0xffffffff-no-rj-mo&f=1&nofb=1">
+			<a href="#"><h3 class = "username_responses">wisecrack</h3></a>
+			<p id = "responses">Sorry, where's your proof? I don't believe in **** without any proof.</p>
+			<div class = "comment_options">
+				<div><p>May 11, 2022</p></div>
+				<div><p>19:34</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "charizard/avatar.png">
+			<a href="#"><h3 class = "username_responses">charizard</h3></a>
+			<p id = "responses">Your the epitome of a brainwashed lunatic whose a sheep towards your little *****!</p>
+			<div class = "comment_options">
+				<div><p>May 11, 2022</p></div>
+				<div><p>23:46</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fyt3.ggpht.com%2Fa%2FAATXAJzrpwZJs5j0Uu-5SpgWat5Ocv0pEq0BpH5ryg%3Ds900-c-k-c0xffffffff-no-rj-mo&f=1&nofb=1">
+			<a href="#"><h3 class = "username_responses">wisecrack</h3></a>
+			<p id = "responses">*You're<br>Next time, if you're going to insult me, at least do it right</p>
+			<div class = "comment_options">
+				<div><p>May 12, 2022</p></div>
+				<div><p>0:23</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "charizard/avatar.png">
+			<a href="#"><h3 class = "username_responses">charizard</h3></a>
+			<p id = "responses">No one gives a **** about grammar. Go touch some grass, furf*g!</p>
+			<div class = "comment_options">
+				<div><p>May 12, 2022</p></div>
+				<div><p>00:50</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fyt3.ggpht.com%2Fa%2FAATXAJzrpwZJs5j0Uu-5SpgWat5Ocv0pEq0BpH5ryg%3Ds900-c-k-c0xffffffff-no-rj-mo&f=1&nofb=1">
+			<a href="#"><h3 class = "username_responses">wisecrack</h3></a>
+			<p id = "responses">no u</p>
+			<div class = "comment_options">
+				<div><p>May 12, 2022</p></div>
+				<div><p>00:53</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "./gekkouga-san/friend_avatar.png">
+			<a href="#"><h3 class = "username_responses">brigaron</h3></a>
+			<p id = "responses"><a href = "#">@charcool006</a> Are you showing us how dumb you are? Do you know what STOP even means without looking at a dictionary?</p>
+			<div class = "comment_options">
+				<div><p>May 12, 2022</p></div>
+				<div><p>3:06</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "charizard/avatar.png">
+			<a href="#"><h3 class = "username_responses">charizard</h3></a>
+			<p id = "responses">Only idiots like you believe I'm dumb y'all can't comprehend what I'm saying with an IQ lower than the chance of the Earth being flat LOL</p>
+			<div class = "comment_options">
+				<div><p>May 12, 2022</p></div>
+				<div><p>3:14</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "./gekkouga-san/friend_avatar.png">
+			<a href="#"><h3 class = "username_responses">brigaron</h3></a>
+			<p id = "responses">How about you go touch some grass and get some fresh air! Put down that keyboard because you serve nothing but put a strain on us. I'm pretty ******* sure you live down the basement of your parent's house.</p>
+			<div class = "comment_options">
+				<div><p>May 12, 2022</p></div>
+				<div><p>9:45</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "charizard/avatar.png">
+			<a href="#"><h3 class = "username_responses">charizard</h3></a>
+			<p id = "responses">Says the simp who can't stop defending their precious *****.</p>
+			<div class = "comment_options">
+				<div><p>May 12, 2022</p></div>
+				<div><p>14:34</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "./gekkouga-san/friend_avatar.png">
+			<a href="#"><h3 class = "username_responses">brigaron</h3></a>
+			<p id = "responses">You don't seem to stop, do you?</p>
+			<div class = "comment_options">
+				<div><p>May 12, 2022</p></div>
+				<div><p>23:13</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "charizard/avatar.png">
+			<a href="#"><h3 class = "username_responses">charizard</h3></a>
+			<p id = "responses">If you don't want to engage in this conversation, then stop replying to my comments! That's easy as ****! What else do you want me to do?! Kiss your ***?!</p>
+			<div class = "comment_options">
+				<div><p>May 12, 2022</p></div>
+				<div><p>23:21</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "charizard/avatar.png">
+			<a href="#"><h3 class = "username_responses">charizard</h3></a>
+			<p id = "responses"><a href = "./gekkouga-san/gekkouga-san.html">@gre658</a> Knock knock, b****!</p>
+			<div class = "comment_options">
+				<div><p>May 15, 2022</p></div>
+				<div><p>15:15</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "./gekkouga-san/avatar.png">
+			<a href="./gekkouga-san/gekkouga-san.html"><h3 class = "username_responses">gekkouga-san</h3></a>
+			<p id = "responses">PLEASE STOP TAGGING ME! CUT IT OUT ALREADY! HOW COULD THIS MAKE ME FEEL WELCOME TO HAVE A TALK WITH YOU WITHOUT BEING AGGRESSIVE TOWARDS ME! THERE'S NO WAY WE'D END UP HAVING A NICE, CIVIL DISCUSSION WITHOUT INSULTS BEING THROWN HERE AND THERE! YOU'RE BEING NOTHING BUT SMUG!!</p>
+			<div class = "comment_options">
+				<div><p>May 15, 2022</p></div>
+				<div><p>18:54</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "charizard/avatar.png">
+			<a href="#"><h3 class = "username_responses">charizard</h3></a>
+			<p id = "responses">Imagine using all caps to indicate that your angry as if thats your only solution. ***** ******* ****** you cant even handle critisms at all. *** forbid you would want to survive the real world without listening to anyone that has a word for you.</p>
+			<div class = "comment_options">
+				<div><p>May 15, 2022</p></div>
+				<div><p>21:22</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "./gekkouga-san/avatar.png">
+			<a href="./gekkouga-san/gekkouga-san.html"><h3 class = "username_responses">gekkouga-san</h3></a>
+			<p id = "responses">Can't you be nice for a moment?!?! I would want to engage with you only if you're not being an ***hole towards me or my friends!!</p>
+			<div class = "comment_options">
+				<div><p>May 15, 2022</p></div>
+				<div><p>21:43</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "charizard/avatar.png">
+			<a href="#"><h3 class = "username_responses">charizard</h3></a>
+			<p id = "responses">There's no such thing as being nice if you live in lies, you ****!</p>
+			<div class = "comment_options">
+				<div><p>May 15, 2022</p></div>
+				<div><p>22:01</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "./gekkouga-san/avatar.png">
+			<a href="./gekkouga-san/gekkouga-san.html"><h3 class = "username_responses">gekkouga-san</h3></a>
+			<p id = "responses">You will never understand what I'm going through right now, you heartless sack of ****! </p>
+			<div class = "comment_options">
+				<div><p>May 15, 2022</p></div>
+				<div><p>22:36</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "charizard/avatar.png">
+			<a href="#"><h3 class = "username_responses">charizard</h3></a>
+			<p id = "responses">Quit being a p***y! Your feelings don't matter in this situation. We're dealing with facts. Not some oomy loomy jack **** of emotions.</p>
+			<div class = "comment_options">
+				<div><p>May 15, 2022</p></div>
+				<div><p>23:17</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "./gekkouga-san/avatar.png">
+			<a href="./gekkouga-san/gekkouga-san.html"><h3 class = "username_responses">gekkouga-san</h3></a>
+			<p id = "responses">I'm done with you! DON'T TALK TO ME OR MY FRIENDS EVER AGAIN! ! !</p>
+			<div class = "comment_options">
+				<div><p>May 16, 2022</p></div>
+				<div><p>10:10</p></div>
+			</div>
+		</div>
+
+		<div class = "comments">
+			<img src = "./gekkouga-san/friend_avatar.png">
+			<a href="#"><h3 class = "username_responses">brigaron</h3></a>
+			<p id = "responses">You've been improving a lot lately. I hope you're doing well there, kouga!</p>
+			<div class = "comment_options">
+				<div><p>May 02, 2022</p></div>
+				<div><p>23:44</p></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "./gekkouga-san/avatar.png">
+			<a href="./gekkouga-san/gekkouga-san.html"><h3 class = "username_responses">gekkouga-san</h3></a>
+			<p id = "responses">Thank you!<br><br>I'm thankful you're one of those people who care about me.</p>
+			<div class = "comment_options">
+				<div><p>May 02, 2022</p></div>
+				<div><p>23:56</p></div>
+			</div>
+		</div>
+
+		<!--FOOTER PART-->
+		<div class = "myFooter">
+			<p>pixDev @ 2022</p>
+		</div>
+
+	</body>
+
+</html>

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>pixDEV</title>
+		<!-- Insert external CSS file here -->
+        <link rel = "stylesheet" href = "../pixDEV_style_dark.css">
+        <link rel="icon" type="image/x-icon" href="../favicon.ico">
+        <style>
+        	.division{
+        		display: block;
+        	}
+
+        	.display #artwork{
+				padding-left: 100px;
+				padding-right: 100px;
+				padding-top: 60px;
+				padding-bottom: 60px;
+				border-bottom: 2px solid rgb(71, 57, 92);
+			}
+
+			.display #artwork img{
+				width: 100%;
+				height: auto;
+			}
+
+			.display .description{
+				padding: 30px;
+				color: white;
+				border-bottom: 2px solid rgb(71, 57, 92);
+			}
+
+			.display .user_display{
+				margin-top: 30px;
+				margin-bottom: 30px;
+				height:  80px;
+				padding-left: 30px;
+				padding-right: 30px;
+				border-bottom: 2px solid rgb(71, 57, 92);
+			}
+
+			.display .user_display img{
+				width:  50px;
+				height:  50px;
+				float:  left;
+				margin-right: 10px;
+				margin-top: 10px;
+			}
+
+			.display .user_display #username_profile{
+				margin-bottom: 0;
+				color: white;
+			}
+
+			.display .user_display h5{
+				color: rgb(234, 66, 121);
+				margin-top: -5px;
+			}
+
+			#statistics{
+				display: flex;
+				justify-content: right;
+				margin: -60px;
+			}
+
+			#statistics > div {
+				margin: 10px;
+				padding: 20px;
+			}
+
+			#statistics span{
+				color: rgb(180, 157, 180);
+			}
+
+			.display i{
+				color: rgb(180, 157, 180)
+			}
+
+			.comment_box{
+				margin-left: 150px;
+				margin-right: 150px;
+				margin-top: 20px;
+			}
+
+			h2{
+				color: #4cb9ad;
+			}
+
+			.comments{
+				background-color: rgb(37, 26, 38);
+				margin-left: 150px;
+				margin-right: 150px;
+				margin-top: 30px;
+				margin-bottom: 30px;
+				border: 2px solid rgb(71, 57, 92);
+				padding:  30px;
+			}
+
+			.replies{
+				background-color: rgb(37, 26, 38);
+				margin-left: 300px;
+				margin-right: 150px;
+				margin-top: 30px;
+				margin-bottom: 30px;
+				border: 2px solid rgb(71, 57, 92);
+				padding:  30px;
+			}
+
+			.comments img{
+				width: 50px;
+				height: 50px;
+				float:  left;
+			}
+
+			.replies img{
+				width: 50px;
+				height: 50px;
+				float:  left;
+			}
+
+			.username_responses{
+				margin-left: 60px;
+				color: #4cb9ad;
+			}
+
+			.replies #responses{
+				color: white;
+				margin-top: 20px;
+			}
+
+			.comments #responses{
+				color: white;
+				margin-top: 20px;
+			}
+
+			.comment_options{
+				margin-top: 20px;
+				display: inline-flex;
+				gap: 30px;
+			}
+
+			.comment_options p{
+				color: rgb(180, 157, 180);
+			}
+
+			.comments a, .replies a{
+				color: rgb(234, 66, 121);
+				text-decoration: none;
+			}
+
+			.comments a:hover, .replies	a:hover{
+				color: #4cb9ad;
+			}
+
+			#comment_box{
+				margin-top: 20px;
+				width: 100%;
+				background-color: white;
+				border: 2px solid rgb(71, 57, 92);
+				padding: 20px;
+			}
+
+			.button_submit{
+				display: flex;
+				justify-content: right;
+			}
+
+			#submit_button{
+				justify-content: right;
+				margin-top: 20px;
+				background-color: rgb(234, 66, 121);
+				color: white;
+				font-size: 20px;
+				border: none;
+				padding: 10px;
+				width: 100px;
+			}
+
+			#submit_button:hover{
+				background-color: rgb(180, 54, 128);
+				cursor: pointer;
+				transition-duration: 0.25s;
+			}
+
+			#submit_button:active{
+				background-color: #4cb9ad;
+				position: relative;
+				left: 2px;
+				top: 2px;
+			}
+
+			#comment_box:hover {
+			    background-color: lightyellow;
+			}
+
+			#comment_box:focus {
+			    background-color: lightyellow;
+			}
+
+			#buttons{
+				display:  flex;
+				justify-content: right;
+				gap: 20px;
+			}
+
+			#edit_button{
+				text-align: center;
+				text-decoration: none;
+				background-color: rgb(71, 57, 92);
+				color: white;
+				font-size: 20px;
+				border: none;
+				padding: 10px;
+				width: 150px;
+				margin: 20px;
+			}
+
+			#edit_button:hover{
+				background-color: #4cb9ad;
+				color: rgb(37, 26, 38);
+				transition:  0.25s;
+			}
+
+			.tags{
+				display: flex;
+				gap: 20px;
+				margin: 20px;
+
+			}
+
+			.tags a{
+				color: rgb(180, 157, 180);
+				text-decoration: none;
+			}
+
+			.tags a:hover{
+				color: rgb(234, 66, 121);
+			}
+        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+
+	<body>
+		<!--HEADER PART-->
+		<div class = "myHeader">
+
+			<!--LEFT-->
+			<div class = "burger_menu">
+				<div id = "nav_menu">
+					<i class="fa fa-bars"></i>
+				</div>
+				<!--BURGER MENU-->
+				<div id ="burger_contents_div">
+					<i class="fa fa-bars"></i>
+					<img src = "../web_logo.png" width = 120px class = "menu_logo">
+					<div id = "burger_contents">
+						<a href="home.html">Home</a>
+						<a href="#">About Us</a>
+						<a href="#">Contact Us</a>
+						<a href="#">Terms of Service</a>
+						<a href="#">Privacy Policy</a>
+					</div>
+					<div id = "menu_design">
+						<img src = "../menu_design.png" id = "menu_art">
+						<p>pixDev @ 2022</p>
+					</div>
+				</div>
+			</div>
+			<a href="home.html"><img src = "../web_logo.png" width = 120px class = "logo"></a>
+
+			<form class = "search">
+				<input type = "text" placeholder = "Search..." name = "search_bar" class = "search_box">
+			</form>
+
+			<!--RIGHT-->
+			<div id = "login_reg_tab">
+				<div id = "button1">
+					<a href = "login.html">Login</a>
+				</div>
+				<div id = "button2">
+					<a href = "register.html">Register</a>
+				</div>
+			</div>
+
+			<a href = "#" id="to_top_button"><i class ="fa fa-arrow-up"></i></a>
+			
+		</div>
+		<!--BODY DIVISION-->
+		<div class = "display">
+
+			<h1>Bulbasaur Day</h1>
+
+			<div class = "division">
+				<div id = "artwork">
+					<img src="https://static1.e621.net/data/sample/7c/33/7c33c234df324995f35ac639034de739.jpg">
+				</div>
+
+				<p class = "description">(∩,,◕◞౪◟◕)⊃━☆+ ﾟ .+ .ﾟ.ﾟ｡ ﾟ ｡. +ﾟ ｡ﾟ.ﾟ｡☆*｡｡ . ｡ o .｡ﾟ｡.o｡* ｡ .｡<br><br>Today's a good day to start the week with a bang! I hope you all like it! <br><br>.+ .ﾟ.ﾟ｡ ﾟ ｡. +ﾟ ｡ﾟ.ﾟ｡☆*｡｡ . ｡ o .｡ﾟ｡.o｡* ｡ .｡</p>
+
+				<div class = "user_display">
+					<img src = "./sobble-bubble/avatar.png">
+
+					<a href = "./sobble-bubble/sobble-bubble.html"><h3 id = "username_profile">sobble-bubble</h3></a>
+					<h5>@sobble816</h5>
+
+					<div id="statistics">
+						<div id="date">
+							<span>April 27, 2022</span>
+						</div>
+
+						<div id="time">
+							<span>21:32</span>
+						</div>
+
+						<div id="favourites">
+							<i class="fa fa-heart"></i>
+							<span>363</span>
+						</div>
+
+						<div id="comment">
+							<i class="fa fa-comment"></i>
+							<span>10</span>
+						</div>
+						
+
+						<div id="views">
+							<i class="fa fa-eye"></i>
+							<span>564</span>
+						</div>
+					</div>
+				</div>
+				<div class = "tags">
+					<div>
+						<a href = "#">#pokemon</a>
+					</div>
+					<div>
+						<a href = "#">#bulbasaur</a>
+					</div>
+					<div>
+						<a href = "#">#day</a>
+					</div>
+					<div>
+						<a href = "#">#digitalart</a>
+					</div>
+					<div>
+						<a href = "#">#sobblebubble</a>
+					</div>
+					<div>
+						<a href = "#">#fanart</a>
+					</div>
+					<div>
+						<a href = "#">#digital</a>
+					</div>
+					<div>
+						<a href = "#">#bulbasaurday</a>
+					</div>
+					<div>
+						<a href = "#">#kanto</a>
+					</div>
+					<div>
+						<a href = "#">#grassstarter</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--COMMENT SECTION-->
+		<div class = "comment_box">
+			<h2>Comments</h2>
+		</div>
+
+		<div class = "comments">
+			<img src = "./charizard/friend_avatar2.png">
+			<a href = "#"><h3 class = "username_responses">blastoise</h3></a>
+			<p id = "responses">Pretty awesome!</p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:27</p></div>
+				
+			</div>
+		</div>
+
+		<div class = "comments">
+			<img src = "./charizard/friend_avatar5.png">
+			<a href = "#"><h3 class = "username_responses">gatrman</h3></a>
+			<p id = "responses">How are you this talented my goodness!!</p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:27</p></div>
+				
+			</div>
+		</div>
+
+		<div class = "comments">
+			<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp4975817.jpg&f=1&nofb=1">
+			<a href = "#"><h3 class = "username_responses">rillakaboom</h3></a>
+			<p id = "responses">Sweet!</p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:27</p></div>
+				
+			</div>
+		</div>
+
+		<div class = "comments">
+			<img src = "./charizard/friend_avatar4.png">
+			<a href = "#"><h3 class = "username_responses">cheetoz</h3></a>
+			<p id = "responses">Imagine getting beaten by a 12 year old in terms of art skills cuz DAMN!!</p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:27</p></div>
+				
+			</div>
+		</div>
+
+		<div class = "comments">
+			<img src = "./gekkouga-san/avatar.png">
+			<a href = "./gekkouga-san/gekkouga-san.html"><h3 class = "username_responses">gekkouga-san</h3></a>
+			<p id = "responses">Your techniques are impressive I must say it envies me aaaa</p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:27</p></div>
+				
+			</div>
+		</div>
+
+		<div class = "comments">
+			<img src = "./charizard/enemy_avatar.png">
+			<a href = ""><h3 class = "username_responses">bulletseed254</h3></a>
+			<p id = "responses">Cool</p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:32</p></div>
+				
+			</div>
+		</div>
+
+		<div class = "comments">
+			<img src = "./charizard/avatar.png">
+			<a href = "./charizard/charizard.html"><h3 class = "username_responses">charizard</h3></a>
+			<p id = "responses">Someone PLEASE get this kid into Disney</p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:32</p></div>
+				
+			</div>
+		</div>
+
+		<div class = "comments">
+			<img src = "https://i.pinimg.com/originals/f6/c7/62/f6c762203beea5b6fc23329403b844e1.gif">
+			<a href = "#"><h3 class = "username_responses">blazekick</h3></a>
+			<p id = "responses">Pure talent!!!</p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:27</p></div>
+				
+			</div>
+		</div>
+
+		<div class = "comments">
+			<img src = "./gekkouga-san/friend_avatar.png">
+			<a href = "#"><h3 class = "username_responses">brigaron</h3></a>
+			<p id = "responses">The lineart, coloring, and lighting are so good yet you're only 12 years old now this is another level of prodigy! Keep it coming!</p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:27</p></div>
+				
+			</div>
+		</div>
+
+		<div class = "comments">
+			<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fclipground.com%2Fimages%2Fturtwig-clipart-11.png&f=1&nofb=1">
+			<a href="#"><h3 class = "username_responses">wiggum</h3></a>
+			<p id = "responses">Can you draw me and oshawott?</p>
+			<div class = "comment_options">
+				<div><p>April 4, 2022</p></div>
+				<div><p>16:15</p></div>
+			</div>
+		</div>
+		<!--FOOTER PART-->
+		<div class = "myFooter">
+			<p>pixDev @ 2022</p>
+		</div>
+	</body>
+
+</html>

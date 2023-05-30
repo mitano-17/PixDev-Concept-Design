@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>pixDEV</title>
+		<!-- Insert external CSS file here -->
+        <link rel = "stylesheet" href = "../../pixDEV_style_dark.css">
+        <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+        <style>
+            #navigation{
+                display: flex;
+                border-bottom: 2px solid rgb(71, 57, 92);
+            }
+
+            #navigation > div{
+                border-right: 2px solid rgb(71, 57, 92);
+                color: #4cb9ad;
+                padding: 20px 30px 20px 30px;
+                width: 100%;
+                text-align: center;
+            }
+
+            #navigation #home:hover{
+                background-color: rgb(234, 66, 121);
+                color: rgb(37, 26, 38);
+                cursor: pointer;
+            }
+
+            .user_tab{
+                display: flex;
+                gap: 10px;
+            }
+
+            #user_avatar{
+                width: 50px;
+                height: 50px;
+                object-fit: cover;
+            }
+
+            #username_profile{
+                color: white;
+                margin-top: -6px;
+            }
+
+            .user_tab h5{
+                color: rgb(234, 66, 121);
+                margin-top: -12px;
+                text-align: left;
+            }
+
+            .division h3{
+                color: #4cb9ad;
+                text-decoration: none;
+                padding-left: 30px;
+            }
+
+            .gallery_image{
+                width:  280px;
+                height: 280px;
+                object-fit: cover;
+            }
+
+            .gallery_row{
+                display: flex;
+                justify-content: center;
+            }
+
+            .gallery_row > div{
+                margin: 10px;
+            }
+
+            .gallery_row > div:hover{
+                cursor: pointer;
+                opacity: 0.50;
+                transition: 0.20s;
+            }
+
+            #gallery:hover, #favourites:hover{
+                cursor: pointer;
+                background-color: rgb(234, 66, 121);
+                color: rgb(37, 26, 38);
+            }
+
+            .dropdown_sort_contents{
+                display: none;
+                position: absolute;
+                background-color: rgb(37, 26, 38);
+                margin-left: -28px;
+                margin-top: 20px;
+                width: 300px;
+            }
+
+            .dropdown_sort_contents a{
+                color: white;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+            .dropdown_sort_contents a:hover{
+                background-color: rgb(234, 66, 121);
+                color: rgb(37, 26, 38);
+            }
+
+            #gallery:hover .dropdown_sort_contents, #favourites:hover .dropdown_sort_contents {
+                display: block;
+            }
+
+            #gallery{
+                background-color: #4cb9ad;
+            }
+
+            #gallery h2{
+                color: rgb(37, 26, 38);
+            }
+
+            a{
+                text-decoration: none;
+            }
+        </style>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+
+	<body>
+		<!--HEADER PART-->
+		<div class = "myHeader">
+
+            <!--LEFT-->
+            <div class = "burger_menu">
+                <div id = "nav_menu">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <!--BURGER MENU-->
+                <div id ="burger_contents_div">
+                    <i class="fa fa-bars"></i>
+                    <img src = "../../web_logo.png" width = 120px class = "menu_logo">
+                    <div id = "burger_contents">
+                        <a href="../home.html">Home</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Contact Us</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Privacy Policy</a>
+                    </div>
+                    <div id = "menu_design">
+                        <img src = "../../menu_design.png" id = "menu_art">
+                        <p>pixDev @ 2022</p>
+                    </div>
+                </div>
+            </div>
+			<a href="../home.html"><img src = "../../web_logo.png" width = 120px class = "logo"></a>
+
+			<form class = "search">
+				<input type = "text" placeholder = "Search..." name = "search_bar" class = "search_box">
+			</form>
+
+			<!--RIGHT-->
+            <div id = "login_reg_tab">
+                <div id = "button1">
+                    <a href = "../login.html">Login</a>
+                </div>
+                <div id = "button2">
+                    <a href = "../register.html">Register</a>
+                </div>
+            </div>
+
+			<a href = "#" id="to_top_button"><i class ="fa fa-arrow-up"></i></a>
+			
+		</div>
+		<!--BODY DIVISION-->
+        <div class = "display">
+            <div id = "navigation">
+                <div>
+                    <div class = "user_tab">
+                        <div>
+                            <img src = "avatar.png" id = "user_avatar">
+                        </div>
+
+                        <div>
+                            <a href="gekkouga-san.html"><h3 id = "username_profile">gekkouga-san</h3></a>
+                            <h5>@gre658</h5>
+                        </div>
+                    </div>
+                </div>
+                <div id = "home">
+                    <a href="gekkouga-san.html"><h2>Home</h2></a>
+                </div>
+
+                <div id = "gallery">
+                    <h2>Gallery</h2>
+                    <div class ="dropdown_sort_contents">
+                        <a href="gekkouga-san_gallery_most_popular.html">Most Popular</a>
+                        <a href="gekkouga-san_gallery_most_recent.html">Most Recent</a>
+                    </div>
+                </div>
+
+                <div id = "favourites">
+                    <h2>Favourites</h2>
+                    <div class ="dropdown_sort_contents">
+                        <a href="gekkouga-san_favourites_most_popular.html">Most Popular</a>
+                        <a href="gekkouga-san_favourites_most_recent.html">Most Recent</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "division">
+                <h3>Most Popular</h3>
+
+                <div class = "gallery_row">
+                    <div>
+                                <a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.fu-berlin.de%2Fpresse%2Finformationen%2Ffup%2F2016%2Ffup_16_052-tusche-kalligrafie-ausstellung-minjalee%2Ffup-052-2016-Tusche-Kalligrafie-Ausstellung_Bild.jpg&f=1&nofb=1" class = "gallery_image"></a>
+                            </div>
+
+                            <div>
+                                <a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fc5%2F93%2F7c%2Fc5937c51addbaa843f3bb82e12b4dcdc.jpg&f=1&nofb=1" class = "gallery_image"></a>
+                            </div>
+
+                            <div>
+                                <a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi0.wp.com%2Fwww.aesdes.org%2Fwp-content%2Fuploads%2F2019%2F01%2FScreen-Shot-2019-01-22-at-6.16.33-PM.jpg%3Ffit%3D1024%252C861&f=1&nofb=1" class = "gallery_image"></a>
+                            </div>
+
+                            <div>
+                                <a href="#"><img src="down.png" class = "gallery_image"></a>
+                            </div>
+                </div>
+
+                <div class = "gallery_row">
+                    <div>
+                        <a href="#"><img src="ninja.png" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F1e%2F04%2F9a%2F1e049af0c8e1526b89fc1624df2411a1.jpg&f=1&nofb=1" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdata.whicdn.com%2Fimages%2F317199629%2Foriginal.jpg&f=1&nofb=1" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://i.pinimg.com/564x/6f/8a/6d/6f8a6d2a0d1ac5657359baf66f2c2606.jpg" class = "gallery_image"></a>
+                    </div>
+                </div>
+
+                <div class = "gallery_row">
+                    <div>
+                        <a href = "#"><img src="https://i.pinimg.com/736x/31/a3/80/31a3802f81082860f1145def3484124a.jpg" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href = "#"><img src="https://i.pinimg.com/736x/02/93/4d/02934d86c800bb198a7bb67f686d97cd.jpg" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href = "#"><img src="https://i.pinimg.com/736x/79/4f/48/794f486f58bd7ab253d785b817a37247.jpg" class = "gallery_image">
+                    </div>
+
+                    <div>
+                        <a href = "#"><img src="https://i.pinimg.com/736x/7d/dd/81/7ddd81be0fa4e56368d08843725883db.jpg" class = "gallery_image"></a>
+                    </div>
+                </div>
+
+                <div class = "gallery_row">
+                    <div>
+                        <a href = "#"><img src="https://i.pinimg.com/736x/13/3f/6e/133f6ef0c5b81a6126adc474a9eb4b8c.jpg" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href = "#"><img src="https://i.pinimg.com/736x/ee/de/33/eede335e81848869268583baf45b905a.jpg" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href = "#"><img src="https://i.pinimg.com/736x/25/fd/fb/25fdfb841dee344b5650eb80fefdc7e8.jpg" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href = "#"><img src="https://i.pinimg.com/736x/ae/08/67/ae08674b8c7a4e589153a26c98cd3b01.jpg" class = "gallery_image"></a>
+                    </div>
+                </div>
+
+                <div class = "gallery_row">
+                    <div>
+                        <a href = "#"><img src="nightmare.png" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href = "#"><img src="https://i.pinimg.com/564x/3c/6f/4b/3c6f4b0bfc120638543687e3e68b7112.jpg" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href = "#"><img src="https://i.pinimg.com/750x/58/36/7f/58367fe85deaab28d96c02a9c38d0f67.jpg" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href = "#"><img src="dream.png" class = "gallery_image"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+		<!--FOOTER PART-->
+		<div class = "myFooter">
+			<p>pixDev @ 2022</p>
+		</div>
+	</body>
+
+</html>

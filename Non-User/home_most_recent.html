@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>pixDEV</title>
+		<!-- Insert external CSS file here -->
+        <link rel = "stylesheet" href = "../pixDEV_style_dark.css">
+		<link rel="icon" type="image/x-icon" href="../favicon.ico">
+        <style type="text/css">
+        	.gallery_image{
+        		width:  280px;
+        		height: 280px;
+        		object-fit: cover;
+        	}
+
+        	.gallery_row{
+        		display: flex;
+        		justify-content: center;
+        	}
+
+        	.gallery_row > div{
+        		margin: 10px;
+        	}
+
+        	.gallery_row > div:hover{
+        		cursor: pointer;
+        		opacity: 0.50;
+        		transition: 0.20s;
+        	}
+
+        	#dropdown_sort:hover{
+        		cursor: pointer;
+        	}
+
+        	#dropdown_sort #dropdown_sort_contents{
+        		display: none;
+				position: absolute;
+				background-color: rgb(37, 26, 38);
+				margin-left: 20px;
+				margin-top: -10px;
+				width: 500px;
+        	}
+
+        	#dropdown_sort_contents a{
+				color: white;
+				padding: 12px 16px;
+				text-decoration: none;
+				display: block;
+			}
+
+			#dropdown_sort_contents a:hover{
+				background-color: rgb(234, 66, 121);
+			}
+
+
+			#dropdown_sort:hover #dropdown_sort_contents {
+			 	display: block;
+			}
+
+        </style>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	</head>
+
+	<body>
+		<!--HEADER PART-->
+		<div class = "myHeader">
+
+			<!--LEFT-->
+			<div class = "burger_menu">
+				<div id = "nav_menu">
+					<i class="fa fa-bars"></i>
+				</div>
+				<!--BURGER MENU-->
+				<div id ="burger_contents_div">
+					<i class="fa fa-bars"></i>
+					<img src = "../web_logo.png" width = 120px class = "menu_logo">
+					<div id = "burger_contents">
+						<a href="home.html">Home</a>
+						<a href="#">About Us</a>
+						<a href="#">Contact Us</a>
+						<a href="#">Terms of Service</a>
+						<a href="#">Privacy Policy</a>
+					</div>
+					<div id = "menu_design">
+						<img src = "../menu_design.png" id = "menu_art">
+						<p>pixDev @ 2022</p>
+					</div>
+				</div>
+			</div>
+			<a href="home.html"><img src = "../web_logo.png" width = 120px class = "logo"></a>
+
+			<form class = "search">
+				<input type = "text" placeholder = "Search..." name = "search_bar" class = "search_box">
+			</form>
+
+			<!--RIGHT-->
+			<div id = "login_reg_tab">
+				<div id = "button1">
+					<a href = "login.html">Login</a>
+				</div>
+				<div id = "button2">
+					<a href = "register.html">Register</a>
+				</div>
+			</div>
+			
+
+			<a href = "#" id="to_top_button"><i class ="fa fa-arrow-up"></i></a>
+			
+		</div>
+		<!--BODY DIVISION-->
+		<div class = "display">
+
+			<div id = "dropdown_sort">
+				<h1>Most Recent</h1>
+				<div id ="dropdown_sort_contents">
+					<a href="home_most_viewed.html">Most Viewed</a>
+					<a href="home_most_commented.html">Most Commented</a>
+					<a href="home.html">Most Popular</a>
+				</div>
+			</div>
+
+			<div class = "gallery_row">
+				<div>
+					<a href = "view_art1.html"><img src="https://i.pinimg.com/originals/6e/dd/b2/6eddb2c8b65a788952f80745b1de6e09.jpg" class = "gallery_image"></a>
+				</div>
+
+				<div>
+					<a href = "#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FB2DfotzCIAArdP5.jpg%3Alarge&f=1&nofb=1" class = "gallery_image">
+				</div>
+
+				<div>
+					<a href = "#"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1d394452-0eff-4cf2-a369-fc66fb6a8dbb/d7dcmr-c12298a0-aca0-4772-bfa1-0142fb94f038.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzFkMzk0NDUyLTBlZmYtNGNmMi1hMzY5LWZjNjZmYjZhOGRiYlwvZDdkY21yLWMxMjI5OGEwLWFjYTAtNDc3Mi1iZmExLTAxNDJmYjk0ZjAzOC5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.H5CDK-1ABNlz5j1WDY7Sg38zvBPxU57Lm1oa6cX3axk" class = "gallery_image">
+				</div>
+
+				<div>
+					<a href = "#"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bfb445db-02d1-4fd7-9dc3-7a5797064427/d6hwck6-f61308cd-9eab-4474-892a-ab77e5a2a3b1.jpg/v1/fill/w_600,h_577,q_75,strp/charmander_x_squirtle_kiss_commision_by_voltarevilgirl_d6hwck6-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2JmYjQ0NWRiLTAyZDEtNGZkNy05ZGMzLTdhNTc5NzA2NDQyN1wvZDZod2NrNi1mNjEzMDhjZC05ZWFiLTQ0NzQtODkyYS1hYjc3ZTVhMmEzYjEuanBnIiwiaGVpZ2h0IjoiPD01NzciLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cL2JmYjQ0NWRiLTAyZDEtNGZkNy05ZGMzLTdhNTc5NzA2NDQyN1wvdm9sdGFyZXZpbGdpcmwtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.0ApotQy6MQtGHm2QDw8ZVG2rN_KksQ4Uo5vPAOmwI44" class = "gallery_image">
+				</div>
+			</div>
+
+			<div class = "gallery_row">
+				<div>
+					<a href = "#"><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages4.fanpop.com%2Fimage%2Fphotos%2F17500000%2FBADLY-DRAWN-PICTURE-shadow-the-hedgehog-17551671-776-600.jpg&f=1&nofb=1" class = "gallery_image">
+				</div>
+
+				<div>
+					<a href = "#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg00.deviantart.net%2F892b%2Fi%2F2014%2F235%2F2%2F6%2Fpoorly_drawn_hei_by_sonicfan3-d7wcqzj.jpg&f=1&nofb=1" class = "gallery_image">
+				</div>
+
+				<div>
+					<a href = "#"><img src="https://static1.e621.net/data/eb/a7/eba7ba3694244e03d93d8c501b10aac2.png" class = "gallery_image">
+				</div>
+
+				<div>
+					<a href = "#"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bfb445db-02d1-4fd7-9dc3-7a5797064427/d8xzl63-f668d21c-0ef2-4d06-a631-9f719902be06.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2JmYjQ0NWRiLTAyZDEtNGZkNy05ZGMzLTdhNTc5NzA2NDQyN1wvZDh4emw2My1mNjY4ZDIxYy0wZWYyLTRkMDYtYTYzMS05ZjcxOTkwMmJlMDYuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.R144-42xQwf9ckisSXs1v0c0Ca1frKL9jn4-SuPHuw0" class = "gallery_image">
+				</div>
+			</div>
+
+			<div class = "gallery_row">
+				<div>
+					<a href = "#"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bfb445db-02d1-4fd7-9dc3-7a5797064427/d5cxaq6-f65e8ba2-8eed-4ffd-af17-f23a797e2fe9.jpg/v1/fill/w_900,h_633,q_75,strp/charmander_and_squirtle_play_footing_by_voltarevilgirl_d5cxaq6-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjMzIiwicGF0aCI6IlwvZlwvYmZiNDQ1ZGItMDJkMS00ZmQ3LTlkYzMtN2E1Nzk3MDY0NDI3XC9kNWN4YXE2LWY2NWU4YmEyLThlZWQtNGZmZC1hZjE3LWYyM2E3OTdlMmZlOS5qcGciLCJ3aWR0aCI6Ijw9OTAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.eYpqOHgIFAXxni90Djr3OpKjCrtTZDt5uYVVa4Y2Ju4" class = "gallery_image">
+				</div>
+
+				<div>
+					<a href = "#"><img src="https://d.furaffinity.net/art/peterheat/1483509983/1483509983.peterheat_img_0587.png" class = "gallery_image">
+				</div>
+
+				<div>
+					<a href = "#"><img src="https://d.furaffinity.net/art/peterheat/1583098128/1583098128.peterheat_0e01eb7a-160e-4c5a-948a-096b5f590e47.jpg" class = "gallery_image">
+				</div>
+
+				<div>
+					<a href = "#"><img src="https://d.furaffinity.net/art/peterheat/1457758704/1457758704.peterheat_image.png" class = "gallery_image">
+				</div>
+			</div>
+
+			<div class = "gallery_row">
+				<div>
+					<a href = "#"><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Forig01.deviantart.net%2Fe674%2Ff%2F2017%2F147%2F2%2Ff%2Funtitled_drawing_by_delightfuldiamond7-dban2px.png&f=1&nofb=1" class = "gallery_image">
+				</div>
+
+				<div>
+					<a href = "#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.CqHsLNgg1xpAAENNuvXD4wHaEZ%26pid%3DApi&f=1" class = "gallery_image">
+				</div>
+
+				<div>
+					<a href = "#"><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Ffc02.deviantart.net%2Ffs71%2Ff%2F2012%2F178%2Fa%2F3%2Fpoorly_drawn_pokemon_by_allmypokemon-d552d8w.png&f=1&nofb=1" class = "gallery_image">
+				</div>
+
+				<div>
+					<a href = "#"><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi0.kym-cdn.com%2Fphotos%2Fimages%2Ffacebook%2F000%2F613%2F323%2Fe2e.jpg&f=1&nofb=1" class = "gallery_image">
+				</div>
+			</div>
+		</div>
+	
+		<!--FOOTER PART-->
+		<div class = "myFooter">
+			<p>pixDev @ 2022</p>
+		</div>
+	</body>
+
+</html>
