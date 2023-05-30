@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>pixDEV</title>
+		<!-- Insert external CSS file here -->
+        <link rel = "stylesheet" href = "../../../pixDEV_style_dark.css">
+        <link rel="icon" type="image/x-icon" href="../../../favicon.ico">
+        <style>
+            #navigation{
+                display: flex;
+                border-bottom: 2px solid rgb(71, 57, 92);
+            }
+
+            #navigation > div{
+                border-right: 2px solid rgb(71, 57, 92);
+                color: #4cb9ad;
+                padding: 20px 30px 20px 30px;
+                width: 100%;
+                text-align: center;
+            }
+
+            #navigation #home:hover{
+                background-color: rgb(234, 66, 121);
+                color: rgb(37, 26, 38);
+                cursor: pointer;
+            }
+
+            .user_tab{
+                display: flex;
+                gap: 10px;
+            }
+
+            #user_avatar{
+                width: 50px;
+                height: 50px;
+                object-fit: cover;
+            }
+
+            #username_profile{
+                color: white;
+                margin-top: -6px;
+            }
+
+            .user_tab h5{
+                color: rgb(234, 66, 121);
+                margin-top: -12px;
+                text-align: left;
+            }
+
+            .division h3{
+                color: #4cb9ad;
+                text-decoration: none;
+                padding-left: 30px;
+            }
+
+            .gallery_image{
+                width:  280px;
+                height: 280px;
+                object-fit: cover;
+            }
+
+            .gallery_row{
+                display: flex;
+                justify-content: center;
+            }
+
+            .gallery_row > div{
+                margin: 10px;
+            }
+
+            .gallery_row > div:hover{
+                cursor: pointer;
+                opacity: 0.50;
+                transition: 0.20s;
+            }
+
+            #gallery:hover, #favourites:hover{
+                cursor: pointer;
+                background-color: rgb(234, 66, 121);
+                color: rgb(37, 26, 38);
+            }
+
+            .dropdown_sort_contents{
+                display: none;
+                position: absolute;
+                background-color: rgb(37, 26, 38);
+                margin-left: -28px;
+                margin-top: 20px;
+                width: 300px;
+            }
+
+            .dropdown_sort_contents a{
+                color: white;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+            .dropdown_sort_contents a:hover{
+                background-color: rgb(234, 66, 121);
+                color: rgb(37, 26, 38);
+            }
+
+            #gallery:hover .dropdown_sort_contents, #favourites:hover .dropdown_sort_contents {
+                display: block;
+            }
+
+            #gallery{
+                background-color: #4cb9ad;
+            }
+
+            #gallery h2{
+                color: rgb(37, 26, 38);
+            }
+
+            a{
+                text-decoration: none;
+            }
+        </style>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+
+	<body>
+		<!--HEADER PART-->
+		<div class = "myHeader">
+
+            <!--LEFT-->
+            <div class = "burger_menu">
+                <div id = "nav_menu">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <!--BURGER MENU-->
+                <div id ="burger_contents_div">
+                    <i class="fa fa-bars"></i>
+                    <img src = "../../../web_logo.png" width = 120px class = "menu_logo">
+                    <div id = "burger_contents">
+                        <a href="../home.html">Home</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Contact Us</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Privacy Policy</a>
+                    </div>
+                    <div id = "menu_design">
+                        <img src = "../../../menu_design.png" id = "menu_art">
+                        <p>pixDev @ 2022</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="../home.html"><img src = "../../../web_logo.png" width = 120px class = "logo"></a>
+
+            <form class = "search">
+                <input type = "text" placeholder = "Search..." name = "search_bar" class = "search_box">
+            </form>
+
+            <a href = "../submit_art.html" class = "button">Submit</a>
+
+			<!--RIGHT-->
+			<div class = "dropdown_menu">
+				<div id = "user_menu">
+					<h3 id = "username" style = "color: white;">froggycutie123</h3>
+
+					<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.reptilecentre.com%2Fsites%2FReptile%2Fimg%2Fcategory-header%2Fwhite-tree-frog-care.jpg&f=1&nofb=1" id = "avatar">
+				</div>
+
+				<!-- DROPDOWN MENU -->
+                <div id ="dropdown_contents">
+                    <a href="froggycutie123.html">Profile</a>
+                    <a href="froggycutie123_gallery_most_recent.html">Gallery</a>
+                    <a href="froggycutie123_favourites_most_recent.html">Favourites</a>
+                    <a href="../user_settings.html">Settings</a>
+                    <a href="../../../Non-User/home.html">Log out</a>
+                </div>
+			</div>
+
+			<a href = "#" id="to_top_button"><i class ="fa fa-arrow-up"></i></a>
+			
+		</div>
+		<!--BODY DIVISION-->
+        <div class = "display">
+            <div id = "navigation">
+                <div>
+                    <div class = "user_tab">
+                        <div>
+                            <img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.reptilecentre.com%2Fsites%2FReptile%2Fimg%2Fcategory-header%2Fwhite-tree-frog-care.jpg&f=1&nofb=1" id = "user_avatar">
+                        </div>
+
+                        <div>
+                            <a href="froggycutie123.html"><h3 id = "username_profile">froggycutie123</h3></a>
+                            <h5>@froggycutie123</h5>
+                        </div>
+                    </div>
+                </div>
+                <div id = "home">
+                    <a href="froggycutie123.html"><h2>Home</h2></a>
+                </div>
+
+                <div id = "gallery">
+                    <h2>Gallery</h2>
+                    <div class ="dropdown_sort_contents">
+                        <a href="froggycutie123_gallery_most_popular.html">Most Popular</a>
+                        <a href="froggycutie123_gallery_most_recent.html">Most Recent</a>
+                    </div>
+                </div>
+
+                <div id = "favourites">
+                    <h2>Favourites</h2>
+                    <div class ="dropdown_sort_contents">
+                        <a href="froggycutie123_favourites_most_popular.html">Most Popular</a>
+                        <a href="froggycutie123_favourites_most_recent.html">Most Recent</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "division">
+                <h3>Most Popular</h3>
+
+                <div class = "gallery_row">
+                    <div>
+                        <a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fphotoworldtours.com%2Fwp-content%2Fuploads%2F2020%2F03%2FFuji_viaje_fotografico_Japon.jpg&f=1&nofb=1" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.demilked.com%2Fmagazine%2Fwp-content%2Fuploads%2F2016%2F10%2Funique-japan-street-photography-17.jpg&f=1&nofb=1" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmymodernmet.com%2Fwp%2Fwp-content%2Fuploads%2F2018%2F03%2Fhiro-goto-japan-photography-24.jpg&f=1&nofb=1" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F17%2F275763-photography-Japan-night-Shibuya.jpg&f=1&nofb=1" class = "gallery_image"></a>
+                    </div>
+                </div>
+
+                <div class = "gallery_row">
+                    <div>
+                        <a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2016%2F05%2F24%2F362161-mountains-water-sky-clouds-landscape-lake-photography-Japan.jpg&f=1&nofb=1" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages4.fanpop.com%2Fimage%2Fphotos%2F20100000%2F-beautiful-Japan-beautiful-places-20150791-1600-1200.jpg&f=1&nofb=1" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fstatic.boredpanda.com%2Fblog%2Fwp-content%2Fuploads%2F2016%2F10%2Fjapan-street-photography-64-580890aebdba7__880.jpg&f=1&nofb=1" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmymodernmet.com%2Fwp%2Fwp-content%2Fuploads%2F2018%2F03%2Fhiro-goto-japan-photography-21.jpg&f=1&nofb=1" class = "gallery_image"></a>
+                    </div>
+                </div>
+
+                <div class = "gallery_row">
+                    <div>
+                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftettybetty.com%2Fwp-content%2Fuploads%2F2018%2F12%2F1-22.jpg&f=1&nofb=1" class = "gallery_image">
+                    </div>
+
+                    <div>
+                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F23%2F496935-cityscape-photography-Japan.jpg&f=1&nofb=1" class = "gallery_image">
+                    </div>
+
+                    <div>
+                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fjordanbanksphoto.com%2Fwp-content%2Fuploads%2F2019%2F08%2FJapan-Cherry-Blossom-0005-1024x683.jpg&f=1&nofb=1" class = "gallery_image">
+                    </div>
+
+                    <div>
+                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.tHbFI2Qcb63E4gjXjmN3LAHaLH%26pid%3DApi&f=1" class = "gallery_image">
+                    </div>
+                </div>
+
+                <div class = "gallery_row">
+                    <div>
+                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.hypILR46uv7kkW8UOFm7LgHaJQ%26pid%3DApi&f=1" class = "gallery_image">
+                    </div>
+
+                    <div>
+                        <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fmymodernmet.com%2Fwp%2Fwp-content%2Fuploads%2F2017%2F04%2Ftakashi-komatsubara-japan-16.jpg&f=1&nofb=1" class = "gallery_image">
+                    </div>
+
+                    <div>
+                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmymodernmet.com%2Fwp%2Fwp-content%2Fuploads%2F2018%2F12%2Frk-japan-scenery-3.jpg&f=1&nofb=1" class = "gallery_image">
+                    </div>
+
+                    <div>
+                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.locationscout.net%2Fimages%2F2017-06%2Fpiss-alley-japan_l.jpeg&f=1&nofb=1" class = "gallery_image">
+                    </div>
+                </div>
+
+                <div class = "gallery_row">
+                    <div>
+                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.c-mw.net%2Fwp-content%2Fuploads%2F2019%2F06%2Fsteven-roe-991118-unsplash.jpg&f=1&nofb=1" class = "gallery_image">
+                    </div>
+
+                    <div>
+                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.hardwarezone.com%2Fgallery%2Fthumbs%2F0%2Fsg%2F2015%2Fhigh-resolution-article-images%2Fcraftsmanship-in-south-korea%2Fsunrisejeonju-original.jpg&f=1&nofb=1" class = "gallery_image">
+                    </div>
+
+                    <div>
+                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fst3.depositphotos.com%2F1645136%2F17192%2Fi%2F950%2Fdepositphotos_171920944-stock-photo-myeong-dong-shopping-street-seoul.jpg&f=1&nofb=1" class = "gallery_image">
+                    </div>
+
+                    <div>
+                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fac%2F5a%2F9b%2Fac5a9b297a288349f79deb0329dbec54.jpg&f=1&nofb=1" class = "gallery_image">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+		<!--FOOTER PART-->
+		<div class = "myFooter">
+			<p>pixDev @ 2022</p>
+		</div>
+	</body>
+
+</html>

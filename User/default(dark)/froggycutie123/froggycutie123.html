@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>pixDEV</title>
+		<link rel="icon" type="image/x-icon" href="../../../favicon.ico">
+		<!-- Insert external CSS file here -->
+        <link rel = "stylesheet" href = "../../../pixDEV_style_dark.css">
+
+		<style>
+			.body_section{
+				margin-left: 150px;
+				margin-right: 150px;
+				margin-top: 100px;
+				display: flex;
+				gap: 30px;
+			}
+
+			.profile_section{
+				background-color: rgb(37, 26, 38);
+				border: 2px solid rgb(71, 57, 92);
+				padding: 40px;
+				width: 30%;
+				height: 750px;
+			}
+
+			.catalog_section{
+				width: 70%;
+			}
+
+			#banner_image{
+				width: 100%;
+				height: 150px;
+				object-fit: cover;
+				background-color: rgb(37, 26, 38);
+				border: 2px solid rgb(71, 57, 92);
+			}
+
+			#avatar{
+				width: 280px;
+				height:  280px;
+				object-fit: cover;
+			}
+
+			#username_profile{
+				color: white;
+			}
+
+			#username_tag{
+				color: rgb(234, 66, 121);
+			}
+
+			p{
+				color: white;
+			}
+
+			.navigation a{
+				color: #4cb9ad;
+				padding: 12px 16px;
+				text-decoration: none;
+				display: block;
+				text-align: center;
+			}
+
+			.navigation a:hover{
+				background-color: #4cb9ad;
+				color: rgb(37, 26, 38);
+				transition-duration: 0.25s;
+			}
+
+			#location{
+				color: rgb(234, 66, 121);
+			}
+
+			.section{
+				background-color: rgb(37, 26, 38);
+				border: 2px solid rgb(71, 57, 92);
+				margin-top: 50px;
+			}
+
+			.section h2{
+				color: white;
+				text-decoration: none;
+				padding: 10px;
+				border-bottom: 2px solid rgb(71, 57, 92);
+			}
+
+			.section h3{
+				color: #4cb9ad;
+				text-decoration: none;
+				padding-left: 30px;
+			}
+
+			.gallery_image{
+        		width:  175px;
+        		height: 175px;
+        		object-fit: cover;
+        	}
+
+        	.gallery_row{
+        		display: flex;
+        		justify-content: center;
+        	}
+
+        	.gallery_row > div{
+        		margin: 10px;
+        	}
+
+        	.gallery_row > div:hover{
+        		cursor: pointer;
+        		opacity: 0.50;
+        		transition: 0.20s;
+        	}
+
+        	.division{
+        		border-bottom: 2px solid rgb(71, 57, 92);
+        	}
+
+        	.profile_row{
+        		display: flex;
+        	}
+
+        	.profile_column{
+        		gap: 10px;
+        		padding-left: 30px;
+        		padding-right: 30px;
+        		padding-bottom: 30px;
+        	}
+
+        	#id-photo{
+        		width: 280px;
+        		height: 300px;
+        		object-fit: cover;
+        	}
+
+        	#info p{
+        		color: #4cb9ad;
+        	}
+
+        	.profile_column a{
+        		color: rgb(234, 66, 121);
+        		text-decoration: none;
+        	}
+
+        	table{
+        		margin-top: 20px;
+        	}
+
+        	table tr td{
+        		color: #4cb9ad;
+        		width: 600px;
+        	}
+
+        	table .content_table{
+        		text-align: right;
+        	}
+
+        	.comments{
+				background-color: rgb(37, 26, 38);
+				border: 2px solid rgb(71, 57, 92);
+				margin-top: 30px;
+				margin-bottom: 30px;
+				padding:  30px;
+			}
+
+			.replies{
+				background-color: rgb(37, 26, 38);
+				border: 2px solid rgb(71, 57, 92);
+				margin-bottom: 30px;
+				padding:  30px;
+				margin-left: 150px;
+			}
+
+			.comments img{
+				width: 50px;
+				height: 50px;
+				float:  left;
+			}
+
+			.replies img{
+				width: 50px;
+				height: 50px;
+				float:  left;
+				object-fit: cover;
+			}
+
+			.username_responses{
+				margin-left: 60px;
+				color: #4cb9ad;
+			}
+
+			.replies #responses{
+				color: white;
+				margin-top: 20px;
+			}
+
+			.comments #responses{
+				color: white;
+				margin-top: 20px;
+			}
+
+			h2{
+				color: #4cb9ad;
+			}
+
+			.comment_options p{
+				color: rgb(180, 157, 180);
+			}
+
+			.comments a, .replies a{
+				color: rgb(234, 66, 121);
+				text-decoration: none;
+			}
+
+			.comments a:hover, .replies a:hover{
+				color: #4cb9ad;
+				text-decoration: underline;
+			}
+
+			.comment_options{
+				margin-top: 20px;
+				display: inline-flex;
+				gap: 30px;
+			}
+
+			#comment_box{
+				margin-top: 20px;
+				width: 100%;
+				background-color: white;
+				border: 2px solid rgb(71, 57, 92);
+				padding: 20px;
+			}
+
+			.button_submit{
+				display: flex;
+				justify-content: right;
+			}
+
+			#submit_button{
+				justify-content: right;
+				margin-top: 20px;
+				background-color: rgb(234, 66, 121);
+				color: white;
+				font-size: 20px;
+				border: none;
+				padding: 10px;
+				width: 100px;
+			}
+
+			#submit_button:hover{
+				background-color: rgb(180, 54, 128);
+				cursor: pointer;
+				transition-duration: 0.25s;
+			}
+
+			#submit_button:active{
+				background-color: #4cb9ad;
+				position: relative;
+				left: 2px;
+				top: 2px;
+			}
+
+			#comment_box:hover {
+			    background-color: lightyellow;
+			}
+
+			#comment_box:focus {
+			    background-color: lightyellow;
+			}
+
+		</style>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+
+	<body>
+		<!--HEADER PART-->
+		<div class = "myHeader">
+
+			<!--LEFT-->
+			<div class = "burger_menu">
+				<div id = "nav_menu">
+					<i class="fa fa-bars"></i>
+				</div>
+				<!--BURGER MENU-->
+				<div id ="burger_contents_div">
+					<i class="fa fa-bars"></i>
+					<img src = "../../../web_logo.png" width = 120px class = "menu_logo">
+					<div id = "burger_contents">
+						<a href="../home.html">Home</a>
+						<a href="#">About Us</a>
+						<a href="#">Contact Us</a>
+						<a href="#">Terms of Service</a>
+						<a href="#">Privacy Policy</a>
+					</div>
+					<div id = "menu_design">
+						<img src = "../../../menu_design.png" id = "menu_art">
+						<p>pixDev @ 2022</p>
+					</div>
+				</div>
+			</div>
+
+			<a href="../home.html"><img src = "../../../web_logo.png" width = 120px class = "logo"></a>
+
+			<form class = "search">
+				<input type = "text" placeholder = "Search..." name = "search_bar" class = "search_box">
+			</form>
+
+			<a href = "../submit_art.html" class = "button">Submit</a>
+
+			<!--RIGHT-->
+			<div class = "dropdown_menu">
+				<div id = "user_menu">
+					<h3 id = "username" style = "color: white;">froggycutie123</h3>
+
+					<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.reptilecentre.com%2Fsites%2FReptile%2Fimg%2Fcategory-header%2Fwhite-tree-frog-care.jpg&f=1&nofb=1" id = "avatar">
+				</div>
+
+				<!-- DROPDOWN MENU -->
+				<div id ="dropdown_contents">
+					<a href="froggycutie123.html">Profile</a>
+					<a href="froggycutie123_gallery_most_recent.html">Gallery</a>
+					<a href="froggycutie123_favourites_most_recent.html">Favourites</a>
+					<a href="../user_settings.html">Settings</a>
+					<a href="../../../Non-User/home.html">Log out</a>
+				</div>
+			</div>
+
+			<a href = "#" id="to_top_button"><i class ="fa fa-arrow-up"></i></a>
+			
+		</div>
+		<!--BODY DIVISION-->
+		<!-- profile section -->
+		<div class = "body_section">
+			<div class = "profile_section">
+				<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.reptilecentre.com%2Fsites%2FReptile%2Fimg%2Fcategory-header%2Fwhite-tree-frog-care.jpg&f=1&nofb=1" id = "avatar">
+				<a href = "froggycutie123.html"><h3 id = "username_profile">froggycutie123</h3></a>
+				<h5 id = "username_tag">@froggycutie123</h5>
+				<p>私は趣味でマルチメディアアーティストです。 私はカエルの世話をし、長い旅行に行きます。 みなさん、こんにちは〜！</p>
+				<br>
+				<span id ="location"><i class="material-icons">&#xe0c8;</i>Fukushima</span>
+				<!-- list down links -->
+				<div class = "navigation">
+					<a href="froggycutie123.html">Home</a>
+					<a href="froggycutie123_gallery_most_recent.html">Gallery</a>
+					<a href="froggycutie123_favourites_most_recent.html">Favourites</a>
+					<a href="../profile_settings.html">Edit Profile</a>
+				</div>
+			</div>
+			<!-- banner section -->
+			<div class = "catalog_section">
+				<div class = "banner">
+					<img src = "https://friendlypets.com/wp-content/uploads/2020/04/Canva-White-Lipped-Tree-Frog-1-scaled.jpg" id = "banner_image">
+				</div>
+
+				<div class = "section">
+					<a href = "froggycutie123.html"><h2><i class="fa fa-home" style="font-size: 40px; padding-left: 20px;"></i> Home</h2></a>
+					<div class = "division">
+						<a href="froggycutie123_gallery_most_recent.html"><h3>Most Recent</h3></a>
+
+						<div class = "gallery_row">
+							<div>
+								<a href="../view_art1.html"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F6e%2Fdd%2Fb2%2F6eddb2c8b65a788952f80745b1de6e09.jpg&f=1&nofb=1" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fmymodernmet.com%2Fwp%2Fwp-content%2Fuploads%2F2017%2F11%2FRK-tokyo-street-photography-17.jpg&f=1&nofb=1" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.demilked.com%2Fmagazine%2Fwp-content%2Fuploads%2F2015%2F09%2Feveryday-magic-street-photos-kyoto-takashi-yasui-japan-6.jpg&f=1&nofb=1" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2Ff2%2F61%2F02%2Ff26102131c41c523812a0822efe6cc4d.jpg&f=1&nofb=1" class = "gallery_image"></a>
+							</div>
+						</div>
+
+						<div class = "gallery_row">
+							<div>
+								<a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F9e%2F9a%2F96%2F9e9a96fe858b6e09c4aeb352f9c10c76.jpg&f=1&nofb=1" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fstatic.demilked.com%2Fwp-content%2Fuploads%2F2016%2F01%2Fnight-time-tokyo-streets-photography-masashi-wakui-12.jpg&f=1&nofb=1" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Freptile.guide%2Fwp-content%2Fuploads%2F2021%2F06%2FWhites-Tree-Frog-Litoria-caerulea-closeup-with-1536x1025.jpg&f=1&nofb=1" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="froggycutie123_gallery_most_recent.html"><i class="fa fa-arrow-right" style="font-size: 100px; padding-left: 20px;color: rgb(234, 66, 121); width: 175px; height: 175px; padding: 30px; padding-left: 45px;"></a></i>
+							</div>
+						</div>
+					</div>	
+
+					<div class = "division">
+						<a href="froggycutie123_gallery_most_popular.html"><h3>Most Popular</h3></a>
+
+						<div class = "gallery_row">
+							<div>
+								<a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fphotoworldtours.com%2Fwp-content%2Fuploads%2F2020%2F03%2FFuji_viaje_fotografico_Japon.jpg&f=1&nofb=1" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.demilked.com%2Fmagazine%2Fwp-content%2Fuploads%2F2016%2F10%2Funique-japan-street-photography-17.jpg&f=1&nofb=1" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmymodernmet.com%2Fwp%2Fwp-content%2Fuploads%2F2018%2F03%2Fhiro-goto-japan-photography-24.jpg&f=1&nofb=1" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F17%2F275763-photography-Japan-night-Shibuya.jpg&f=1&nofb=1" class = "gallery_image"></a>
+							</div>
+						</div>
+
+						<div class = "gallery_row">
+							<div>
+								<a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2016%2F05%2F24%2F362161-mountains-water-sky-clouds-landscape-lake-photography-Japan.jpg&f=1&nofb=1" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages4.fanpop.com%2Fimage%2Fphotos%2F20100000%2F-beautiful-Japan-beautiful-places-20150791-1600-1200.jpg&f=1&nofb=1" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fstatic.boredpanda.com%2Fblog%2Fwp-content%2Fuploads%2F2016%2F10%2Fjapan-street-photography-64-580890aebdba7__880.jpg&f=1&nofb=1" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="froggycutie123_gallery_most_popular.html"><i class="fa fa-arrow-right" style="font-size: 100px; padding-left: 20px;color: rgb(234, 66, 121); width: 175px; height: 175px; padding: 30px; padding-left: 45px;"></a></i>
+							</div>
+						</div>
+					</div>
+
+					<div class = "division">
+						<a href="froggycutie123_favourites_most_recent.html"><h3>Favourites</h3></a>
+
+						<div class = "gallery_row">
+							<div>
+								<a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcreativecan.com%2Fwp-content%2Fuploads%2F2012%2F05%2Flomography-photo9.jpg&f=1&nofb=1" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://static1.e621.net/data/sample/70/fd/70fdc185fd65e20e026990ff220f139a.jpg" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.kahQboRZwNxpX0kvV-xOTAHaHa%26pid%3DApi&f=1" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.dreamtemplate.com%2Fblog%2Fwp-content%2Fuploads%2F2011%2F09%2Fpic1-a33.jpg&f=1&nofb=1" class = "gallery_image"></a>
+							</div>
+						</div>
+
+						<div class = "gallery_row">
+							<div>
+								<a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.MyQL_Bex1DmuFemJhTzEvAHaE9%26pid%3DApi&f=1" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimg1.ak.crunchyroll.com%2Fi%2Fspire2%2Fe1fc1938171c45dcac07a56c81697b2d1338843620_full.jpg&f=1&nofb=1" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic1.squarespace.com%2Fstatic%2F562ed6b6e4b0426891897db1%2F57f7f519e58c6208092d6bb9%2F57f7f51ad482e9a19e472efc%2F1475867963704%2FFigma-Link-Between-Worlds-001.png&f=1&nofb=1" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="froggycutie123_favourites_most_recent.html"><i class="fa fa-arrow-right" style="font-size: 100px; padding-left: 20px;color: rgb(234, 66, 121); width: 175px; height: 175px; padding: 30px; padding-left: 45px;"></a></i>
+							</div>
+						</div>
+					</div>
+
+					<div class = "division">
+						<h3>About Me</h3>
+
+						<div class = "profile_row">
+							<div class = "profile_column">
+								<p>こんにちは！ 私はフリーランスのマルチメディアアーティストであり、グラフィックデザイン、ファッション、動物に興味のある趣味の人です。 私はまた、風景や動物の写真を専門とするジュニアフォトグラファーでもあります。 よろしければご連絡ください〜！
+								<br><br>
+								私のポートフォリオへのリンク：</p>
+
+								<a href = "https://tinyurl.com/molitoportfolio">https://tinyurl.com/molitoportfolio</a>
+								<table>
+									<tr>
+										<td><b>Name</b></td>
+										<td class="content_table">Kotobuki Ayano</td>
+									</tr>
+									<tr>
+										<td><b>Gender</b></td>
+										<td class="content_table">Female</td>
+									</tr>
+									<tr>
+										<td><b>Birthday</b></td>
+										<td class="content_table">May 12, 2000</td>
+									</tr>
+									<tr>
+										<td><b>Occupation</b></td>
+										<td class="content_table">Multimedia artist</td>
+									</tr>
+								</table>
+							</div>
+
+							<div class = "profile_column">
+								<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.istockphoto.com%2Fphotos%2Fportrait-of-beautiful-japanese-woman-picture-id480187746%3Fk%3D6%26m%3D480187746%26s%3D170667a%26w%3D0%26h%3Dlw0y10ZbkW1AYknLY5H9laDy1vnDMTUHtXFtYZMCzao%3D&f=1&nofb=1" id = "id-photo">
+							</div>
+						</div>
+					</div>	
+				</div>
+				<!-- comment section -->
+				<h2>Comments</h2>
+					<div class = "comments">
+						<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.reptilecentre.com%2Fsites%2FReptile%2Fimg%2Fcategory-header%2Fwhite-tree-frog-care.jpg&f=1&nofb=1">
+						<a href = "froggycutie123.html"><h3 class = "username_responses">froggycutie123</h3></a>
+
+						<form action="/html/tags/html_form_tag_action.cfm" method="post">
+							<textarea name="comments" id = "comment_box" placeholder="Leave a comment">
+							</textarea>
+							<div class = "button_submit">
+								<input type="submit" value="Post" id = "submit_button">
+							</div>
+						</form>
+						
+					</div>
+
+					<div class = "comments">
+						<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ffacts.net%2Fwp-content%2Fuploads%2F2020%2F07%2Fhedgehog-1215140_1920.jpg&f=1&nofb=1">
+						<a href="#"><h3 class = "username_responses">sanic.the.hedgeheg</h3></a>
+						<p id = "responses">あなたの作品はとてもかわいいです〜！ 良い仕事を続けてください！</p>
+						<div class = "comment_options">
+							<div><p>April 4, 2022</p></div>
+							<div><p>16:15</p></div>
+							<div><a href = "#">Reply</a></div>
+							<div><a href = "#">Delete</a></div>
+						</div>
+					</div>
+
+					<div class = "replies">
+						<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.reptilecentre.com%2Fsites%2FReptile%2Fimg%2Fcategory-header%2Fwhite-tree-frog-care.jpg&f=1&nofb=1">
+						<a href="froggycutie123.html"><h3 class = "username_responses">froggycutie123</h3></a>
+						<p id = "responses">どうもありがとう！！！</p>
+						<div class = "comment_options">
+							<div><p>April 6, 2022</p></div>
+							<div><p>22:11</p></div>
+							<div><a href = "#">Reply</a></div>
+							<div><a href = "#">Delete</a></div>
+						</div>
+					</div>
+
+					<div class = "comments">
+						<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpre00.deviantart.net%2F27d9%2Fth%2Fpre%2Ff%2F2016%2F327%2Fd%2F6%2Fstarters_part_one__charmander_tf__by_maxwellromero-dapcjkd.png&f=1&nofb=1">
+						<a href="#"><h3 class = "username_responses">hitokage</h3></a>
+						<p id = "responses">どうしてそんなに才能がありますか？ 私はあなたにうらやましいですAAAAAA (ᗒᗣᗕ)՞</p>
+						<div class = "comment_options">
+							<div><p>March 28, 2022</p></div>
+							<div><p>9:35</p></div>
+							<div><a href = "#">Reply</a></div>
+							<div><a href = "#">Delete</a></div>
+						</div>
+					</div>
+
+					<div class = "replies">
+						<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.pokemonpets.com%2Fimages%2Fmonsters-images-800-800%2F7-Squirtle.png&f=1&nofb=1">
+						<a href="#"><h3 class = "username_responses">zenigame</h3></a>
+						<p id = "responses">私は当然知っている？｡ﾟ( ﾟஇ▽இﾟ)ﾟ｡ </p>
+						<div class = "comment_options">
+							<div><p>March 30, 2022</p></div>
+							<div><p>7:41</p></div>
+							<div><a href = "#">Reply</a></div>
+							<div><a href = "#">Delete</a></div>
+						</div>
+					</div>
+
+					<div class = "replies">
+						<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.reptilecentre.com%2Fsites%2FReptile%2Fimg%2Fcategory-header%2Fwhite-tree-frog-care.jpg&f=1&nofb=1">
+						<a href="froggycutie123.html"><h3 class = "username_responses">froggycutie123</h3></a>
+						<p id = "responses">時間と練習が必要で、子供の頃の趣味が好きなので〜</p>
+						<div class = "comment_options">
+							<div><p>April 6, 2022</p></div>
+							<div><p>22:09</p></div>
+							<div><a href = "#">Reply</a></div>
+							<div><a href = "#">Delete</a></div>
+						</div>
+					</div>
+
+					<div class = "comments">
+						<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi1.wp.com%2Fthetravelrangers.com%2Fwp-content%2Fuploads%2F2018%2F11%2FBaby-Zebra-in-Africa.jpg%3Fw%3D900%26ssl%3D1&f=1&nofb=1">
+						<a href="#"><h3 class = "username_responses">jason491</h3></a>
+						<p id = "responses">nice</p>
+						<div class = "comment_options">
+							<div><p>February 16, 2022</p></div>
+							<div><p>21:13</p></div>
+							<div><a href = "#">Reply</a></div>
+							<div><a href = "#">Delete</a></div>
+						</div>
+					</div>
+			</div>
+		</div>
+		
+		<!--FOOTER PART-->
+		<div class = "myFooter">
+			<p>pixDev @ 2022</p>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>pixDEV</title>
+		<!-- Insert external CSS file here -->
+        <link rel = "stylesheet" href = "../../../pixDEV_style_dark.css">
+        <link rel="icon" type="image/x-icon" href="../../../favicon.ico">
+        <style>
+            #navigation{
+                display: flex;
+                border-bottom: 2px solid rgb(71, 57, 92);
+            }
+
+            #navigation > div{
+                border-right: 2px solid rgb(71, 57, 92);
+                color: #4cb9ad;
+                padding: 20px 30px 20px 30px;
+                width: 100%;
+                text-align: center;
+            }
+
+            #navigation #home:hover{
+                background-color: rgb(234, 66, 121);
+                color: rgb(37, 26, 38);
+                cursor: pointer;
+            }
+
+            .user_tab{
+                display: flex;
+                gap: 10px;
+            }
+
+            #user_avatar{
+                width: 50px;
+                height: 50px;
+                object-fit: cover;
+            }
+
+            #username_profile{
+                color: white;
+                margin-top: -6px;
+            }
+
+            .user_tab h5{
+                color: rgb(234, 66, 121);
+                margin-top: -12px;
+                text-align: left;
+            }
+
+            .division h3{
+                color: #4cb9ad;
+                text-decoration: none;
+                padding-left: 30px;
+            }
+
+            .gallery_image{
+                width:  280px;
+                height: 280px;
+                object-fit: cover;
+            }
+
+            .gallery_row{
+                display: flex;
+                justify-content: center;
+            }
+
+            .gallery_row > div{
+                margin: 10px;
+            }
+
+            .gallery_row > div:hover{
+                cursor: pointer;
+                opacity: 0.50;
+                transition: 0.20s;
+            }
+
+            #gallery:hover, #favourites:hover{
+                cursor: pointer;
+                background-color: rgb(234, 66, 121);
+                color: rgb(37, 26, 38);
+            }
+
+            .dropdown_sort_contents{
+                display: none;
+                position: absolute;
+                background-color: rgb(37, 26, 38);
+                margin-left: -28px;
+                margin-top: 20px;
+                width: 300px;
+            }
+
+            .dropdown_sort_contents a{
+                color: white;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+            .dropdown_sort_contents a:hover{
+                background-color: rgb(234, 66, 121);
+                color: rgb(37, 26, 38);
+            }
+
+            #gallery:hover .dropdown_sort_contents, #favourites:hover .dropdown_sort_contents {
+                display: block;
+            }
+
+            #gallery{
+                background-color: #4cb9ad;
+            }
+
+            #gallery h2{
+                color: rgb(37, 26, 38);
+            }
+
+            a{
+                text-decoration: none;
+            }
+        </style>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+
+	<body>
+		<!--HEADER PART-->
+		<div class = "myHeader">
+
+            <!--LEFT-->
+            <div class = "burger_menu">
+                <div id = "nav_menu">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <!--BURGER MENU-->
+                <div id ="burger_contents_div">
+                    <i class="fa fa-bars"></i>
+                    <img src = "../../../web_logo.png" width = 120px class = "menu_logo">
+                    <div id = "burger_contents">
+                        <a href="../home.html">Home</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Contact Us</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Privacy Policy</a>
+                    </div>
+                    <div id = "menu_design">
+                        <img src = "../../../menu_design.png" id = "menu_art">
+                        <p>pixDev @ 2022</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="../home.html"><img src = "../../../web_logo.png" width = 120px class = "logo"></a>
+
+            <form class = "search">
+                <input type = "text" placeholder = "Search..." name = "search_bar" class = "search_box">
+            </form>
+
+            <a href = "../submit_art.html" class = "button">Submit</a>
+
+            <!--RIGHT-->
+            <div class = "dropdown_menu">
+                <div id = "user_menu">
+                    <h3 id = "username" style = "color: white;">froggycutie123</h3>
+
+                    <img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.reptilecentre.com%2Fsites%2FReptile%2Fimg%2Fcategory-header%2Fwhite-tree-frog-care.jpg&f=1&nofb=1" id = "avatar">
+                </div>
+
+                <!-- DROPDOWN MENU -->
+                <div id ="dropdown_contents">
+                    <a href="../froggycutie123/froggycutie123.html">Profile</a>
+                    <a href="../froggycutie123/froggycutie123_gallery_most_recent.html">Gallery</a>
+                    <a href="../froggycutie123/froggycutie123_favourites_most_recent.html">Favourites</a>
+                    <a href="../user_settings.html">Settings</a>
+                    <a href="../../../Non-User/home.html">Log out</a>
+                </div>
+            </div>
+
+			<a href = "#" id="to_top_button"><i class ="fa fa-arrow-up"></i></a>
+			
+		</div>
+		<!--BODY DIVISION-->
+        <div class = "display">
+            <div id = "navigation">
+                <div>
+                    <div class = "user_tab">
+                        <div>
+                            <img src = "../charizard/avatar.png" id = "user_avatar">
+                        </div>
+
+                        <div>
+                            <a href="charizard.html"><h3 id = "username_profile">charizard</h3></a>
+                            <h5>@charizard</h5>
+                        </div>
+                    </div>
+                </div>
+                <div id = "home">
+                    <a href="charizard.html"><h2>Home</h2></a>
+                </div>
+
+                <div id = "gallery">
+                    <h2>Gallery</h2>
+                    <div class ="dropdown_sort_contents">
+                        <a href="charizard_gallery_most_popular.html">Most Popular</a>
+                        <a href="charizard_gallery_most_recent.html">Most Recent</a>
+                    </div>
+                </div>
+
+                <div id = "favourites">
+                    <h2>Favourites</h2>
+                    <div class ="dropdown_sort_contents">
+                        <a href="charizard_favourites_most_popular.html">Most Popular</a>
+                        <a href="charizard_favourites_most_recent.html">Most Recent</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "division">
+                <h3>Most Recent</h3>
+
+                <div class = "gallery_row">
+                    <div>
+                        <a href="../view_art3.html"><img src="https://static1.e621.net/data/sample/da/56/da567ae2e711c0a21897d153a35b072f.jpg" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://d.furaffinity.net/art/peterheat/1483509983/1483509983.peterheat_img_0587.png" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://d.furaffinity.net/art/peterheat/1490492076/1490492076.peterheat_img_1008.png" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://d.furaffinity.net/art/peterheat/1523649260/1523649260.peterheat_fortniteosha.png" class = "gallery_image"></a>
+                    </div>
+                </div>
+
+                <div class = "gallery_row">
+                    <div>
+                        <a href="#"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d7428ab7-0fd8-43c3-80cd-163f1f2d7a7b/dcvo9i3-646b7147-486a-494a-a006-4b846604516b.png/v1/fill/w_1192,h_670,q_70,strp/shiny_chespin_x_quilladin_by_kuby64_dcvo9i3-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4MCIsInBhdGgiOiJcL2ZcL2Q3NDI4YWI3LTBmZDgtNDNjMy04MGNkLTE2M2YxZjJkN2E3YlwvZGN2bzlpMy02NDZiNzE0Ny00ODZhLTQ5NGEtYTAwNi00Yjg0NjYwNDUxNmIucG5nIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.SMyQytBYCZWMhbUrgukKRazsURXhoi1WZFxwqyml7hw" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://d.furaffinity.net/art/peterheat/1495599315/1495599315.peterheat_img_1201.png" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d7428ab7-0fd8-43c3-80cd-163f1f2d7a7b/dc9mcv7-bffbbd72-d073-4705-9ae0-4b15d0e28184.jpg/v1/fill/w_1192,h_670,q_70,strp/chesnaught_underwater_by_kuby64_dc9mcv7-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4MCIsInBhdGgiOiJcL2ZcL2Q3NDI4YWI3LTBmZDgtNDNjMy04MGNkLTE2M2YxZjJkN2E3YlwvZGM5bWN2Ny1iZmZiYmQ3Mi1kMDczLTQ3MDUtOWFlMC00YjE1ZDBlMjgxODQuanBnIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.aQZRp0zlbFiFMXz10R6dnwHS4THO_Zhuvs24o3HCTTw" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2ce4bd20-943d-4ca9-b6c1-b41bbfe87966/dezuk4r-6f1c4b7a-af98-40f8-beb8-afa7054e3744.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzJjZTRiZDIwLTk0M2QtNGNhOS1iNmMxLWI0MWJiZmU4Nzk2NlwvZGV6dWs0ci02ZjFjNGI3YS1hZjk4LTQwZjgtYmViOC1hZmE3MDU0ZTM3NDQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.BLBl6xDEHjPqYkLJ1TgcxAI2a5rt8Ccxs9hKVP1yvic" class = "gallery_image"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+		<!--FOOTER PART-->
+		<div class = "myFooter">
+			<p>pixDev @ 2022</p>
+		</div>
+	</body>
+
+</html>

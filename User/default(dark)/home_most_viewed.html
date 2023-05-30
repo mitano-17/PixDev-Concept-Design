@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>pixDEV</title>
+		<!-- Insert external CSS file here -->
+        <link rel = "stylesheet" href = "../../pixDEV_style_dark.css">
+		<link rel="icon" type="image/x-icon" href="../../favicon.ico">
+        <style type="text/css">
+        	.gallery_image{
+        		width:  280px;
+        		height: 280px;
+        		object-fit: cover;
+        	}
+
+        	.gallery_row{
+        		display: flex;
+        		justify-content: center;
+        	}
+
+        	.gallery_row > div{
+        		margin: 10px;
+        	}
+
+        	.gallery_row > div:hover{
+        		cursor: pointer;
+        		opacity: 0.50;
+        		transition: 0.20s;
+        	}
+
+        	#dropdown_sort:hover{
+        		cursor: pointer;
+        	}
+
+        	#dropdown_sort #dropdown_sort_contents{
+        		display: none;
+				position: absolute;
+				background-color: rgb(37, 26, 38);
+				margin-left: 20px;
+				margin-top: -10px;
+				width: 500px;
+        	}
+
+        	#dropdown_sort_contents a{
+				color: white;
+				padding: 12px 16px;
+				text-decoration: none;
+				display: block;
+			}
+
+			#dropdown_sort_contents a:hover{
+				background-color: rgb(234, 66, 121);
+			}
+
+
+			#dropdown_sort:hover #dropdown_sort_contents {
+			 	display: block;
+			}
+
+        </style>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	</head>
+
+	<body>
+		<!--HEADER PART-->
+		<div class = "myHeader">
+
+			<!--LEFT-->
+			<div class = "burger_menu">
+				<div id = "nav_menu">
+					<i class="fa fa-bars"></i>
+				</div>
+				<!--BURGER MENU-->
+				<div id ="burger_contents_div">
+					<i class="fa fa-bars"></i>
+					<img src = "../../web_logo.png" width = 120px class = "menu_logo">
+					<div id = "burger_contents">
+						<a href="./home.html">Home</a>
+						<a href="#">About Us</a>
+						<a href="#">Contact Us</a>
+						<a href="#">Terms of Service</a>
+						<a href="#">Privacy Policy</a>
+					</div>
+					<div id = "menu_design">
+						<img src = "../../menu_design.png" id = "menu_art">
+						<p>pixDev @ 2022</p>
+					</div>
+				</div>
+			</div>
+
+			<a href="home.html"><img src = "../../web_logo.png" width = 120px class = "logo"></a>
+
+			<form class = "search">
+				<input type = "text" placeholder = "Search..." name = "search_bar" class = "search_box">
+			</form>
+
+			<a href = "submit_art.html" class = "button">Submit</a>
+
+			<!--RIGHT-->
+			<div class = "dropdown_menu">
+				<div id = "user_menu">
+					<h3 id = "username" style = "color: white;">froggycutie123</h3>
+
+					<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.reptilecentre.com%2Fsites%2FReptile%2Fimg%2Fcategory-header%2Fwhite-tree-frog-care.jpg&f=1&nofb=1" id = "avatar">
+				</div>
+
+				<!-- DROPDOWN MENU -->
+				<div id ="dropdown_contents">
+					<a href="./froggycutie123/froggycutie123.html">Profile</a>
+					<a href="./froggycutie123/froggycutie123_gallery_most_recent.html">Gallery</a>
+					<a href="./froggycutie123/froggycutie123_favourites_most_recent.html">Favourites</a>
+					<a href="user_settings.html">Settings</a>
+					<a href="../../Non-User/home.html">Log out</a>
+				</div>
+			</div>
+
+			<a href = "#" id="to_top_button"><i class ="fa fa-arrow-up"></i></a>
+			
+		</div>
+		<!--BODY DIVISION-->
+		<div class = "display">
+
+			<div id = "dropdown_sort">
+				<h1>Most Viewed</h1>
+				<div id ="dropdown_sort_contents">
+					<a href="home_most_commented.html">Most Commented</a>
+					<a href="home.html">Most Popular</a>
+					<a href="home_most_recent.html">Most Recent</a>
+				</div>
+			</div>
+
+			<div class = "gallery_row">
+				<div>
+					<a href = "./view_art5.html"><img src="https://www.cultureowl.com/uploads/blogimages/2018/05/1525287750a1.jpg.jpg" class = "gallery_image"></a>
+				</div>
+
+				<div>
+					<a href = "#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F3.bp.blogspot.com%2F-bjo26NuhnxI%2FWEOxgrGMxJI%2FAAAAAAAABOQ%2FDUNiHvw4wvcBbuiZ8oGR6JbujxMwskfZACLcB%2Fs1600%2Fbouno_satoshi_anime_girl_horns_glasses_105602_2121x1368.jpg&f=1&nofb=1" class = "gallery_image"></a>
+				</div>
+
+				<div>
+					<a href = "#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2017%2F11%2F22%2F316061-photography-people.jpg&f=1&nofb=1" class = "gallery_image"></a>
+				</div>
+
+				<div>
+					<a href = "#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F77%2Ff6%2F1f%2F77f61fe1e89e562f220e42f2a0223f4f.jpg&f=1&nofb=1" class = "gallery_image"></a>
+				</div>
+			</div>
+
+			<div class = "gallery_row">
+				<div>
+					<a href = "#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.9Qtzj7F0bIK76XLM0ZiZAAHaJl%26pid%3DApi&f=1" class = "gallery_image"></a>
+				</div>
+
+				<div>
+					<a href = "#"><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F1.bp.blogspot.com%2F-H248Ie9oO74%2FUIcLQ_9QGXI%2FAAAAAAAAAFk%2FI75OKMKXD8M%2Fs1600%2FThe%2BWaterfall_024.jpg&f=1&nofb=1" class = "gallery_image"></a>
+				</div>
+
+				<div>
+					<a href = "#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.gzWa1WdsIhaPg27fCS7HEgHaEK%26pid%3DApi&f=1" class = "gallery_image"></a>
+				</div>
+
+				<div>
+					<a href = "#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.gg7wgBQZyLtt39rN8hiRkgHaJ4%26pid%3DApi&f=1" class = "gallery_image"></a>
+				</div>
+			</div>
+
+			<div class = "gallery_row">
+				<div>
+					<a href = "#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.xcitefun.net%2Fusers%2F2010%2F01%2F143813%2Cxcitefun-nature-picture-17.jpg&f=1&nofb=1" class = "gallery_image"></a>
+				</div>
+
+				<div>
+					<a href = "#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.hlN_K-o0FDcUGS3MEGZ9AQHaHa%26pid%3DApi&f=1" class = "gallery_image"></a>
+				</div>
+
+				<div>
+					<a href = "#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.t-zHfYsbjXMQtA9iR7pt6AHaFn%26pid%3DApi&f=1" class = "gallery_image"></a>
+				</div>
+
+				<div>
+					<a href = "#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.Geix2nHcZVYds52I5EeTqQHaHa%26pid%3DApi&f=1" class = "gallery_image"></a>
+				</div>
+			</div>
+
+			<div class = "gallery_row">
+				<div>
+					<a href = "#"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a2dda6c9-e2ae-4bf4-8a15-cbc325251ef5/dcpl7us-d2e08138-60aa-42f7-999c-b26602ab836d.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2EyZGRhNmM5LWUyYWUtNGJmNC04YTE1LWNiYzMyNTI1MWVmNVwvZGNwbDd1cy1kMmUwODEzOC02MGFhLTQyZjctOTk5Yy1iMjY2MDJhYjgzNmQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ERaWo4cgwAJEDeziv0FqgKIw9fFrBLDvlYaCR_gKiog" class = "gallery_image"></a>
+				</div>
+
+				<div>
+					<a href = "#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2Fae%2Fd7%2Fb9%2Faed7b9890d49193c66325a9faa6e3232.jpg&f=1&nofb=1" class = "gallery_image"></a>
+				</div>
+
+				<div>
+					<a href = "#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F52%2F4f%2F67%2F524f6737a3042d9fe81857b8330c9a49.jpg&f=1&nofb=1" class = "gallery_image"></a>
+				</div>
+
+				<div>
+					<a href = "#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fkeepitrelax.com%2Fwp-content%2Fuploads%2F2019%2F02%2F52877952_1025589340960800_673287993968033792_n.jpg&f=1&nofb=1" class = "gallery_image"></a>
+				</div>
+			</div>
+		</div>
+	
+		<!--FOOTER PART-->
+		<div class = "myFooter">
+			<p>pixDev @ 2022</p>
+		</div>
+	</body>
+
+</html>

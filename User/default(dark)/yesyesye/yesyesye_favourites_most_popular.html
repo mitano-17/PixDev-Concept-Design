@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>pixDEV</title>
+        <!-- Insert external CSS file here -->
+        <link rel = "stylesheet" href = "../../../pixDEV_style_dark.css">
+        <link rel="icon" type="image/x-icon" href="../../../favicon.ico">
+        <style>
+            #navigation{
+                display: flex;
+                border-bottom: 2px solid rgb(71, 57, 92);
+            }
+
+            #navigation > div{
+                border-right: 2px solid rgb(71, 57, 92);
+                color: #4cb9ad;
+                padding: 20px 30px 20px 30px;
+                width: 100%;
+                text-align: center;
+            }
+
+            #navigation #home:hover{
+                background-color: rgb(234, 66, 121);
+                color: rgb(37, 26, 38);
+                cursor: pointer;
+            }
+
+            .user_tab{
+                display: flex;
+                gap: 10px;
+            }
+
+            #user_avatar{
+                width: 50px;
+                height: 50px;
+                object-fit: cover;
+            }
+
+            #username_profile{
+                color: white;
+                margin-top: -6px;
+            }
+
+            .user_tab h5{
+                color: rgb(234, 66, 121);
+                margin-top: -12px;
+                text-align: left;
+            }
+
+            .division h3{
+                color: #4cb9ad;
+                text-decoration: none;
+                padding-left: 30px;
+            }
+
+            .gallery_image{
+                width:  280px;
+                height: 280px;
+                object-fit: cover;
+            }
+
+            .gallery_row{
+                display: flex;
+                justify-content: center;
+            }
+
+            .gallery_row > div{
+                margin: 10px;
+            }
+
+            .gallery_row > div:hover{
+                cursor: pointer;
+                opacity: 0.50;
+                transition: 0.20s;
+            }
+
+            #gallery:hover, #favourites:hover{
+                cursor: pointer;
+                background-color: rgb(234, 66, 121);
+                color: rgb(37, 26, 38);
+            }
+
+            .dropdown_sort_contents{
+                display: none;
+                position: absolute;
+                background-color: rgb(37, 26, 38);
+                margin-left: -28px;
+                margin-top: 20px;
+                width: 300px;
+            }
+
+            .dropdown_sort_contents a{
+                color: white;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+            .dropdown_sort_contents a:hover{
+                background-color: rgb(234, 66, 121);
+                color: rgb(37, 26, 38);
+            }
+
+            #gallery:hover .dropdown_sort_contents, #favourites:hover .dropdown_sort_contents {
+                display: block;
+            }
+
+            #favourites{
+                background-color: #4cb9ad;
+            }
+
+            #favourites h2{
+                color: rgb(37, 26, 38);
+            }
+
+            a{
+                text-decoration: none;
+            }
+        </style>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <!--HEADER PART-->
+        <div class = "myHeader">
+
+            <!--LEFT-->
+            <div class = "burger_menu">
+                <div id = "nav_menu">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <!--BURGER MENU-->
+                <div id ="burger_contents_div">
+                    <i class="fa fa-bars"></i>
+                    <img src = "../../../web_logo.png" width = 120px class = "menu_logo">
+                    <div id = "burger_contents">
+                        <a href="../home.html">Home</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Contact Us</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Privacy Policy</a>
+                    </div>
+                    <div id = "menu_design">
+                        <img src = "../../../menu_design.png" id = "menu_art">
+                        <p>pixDev @ 2022</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="../home.html"><img src = "../../../web_logo.png" width = 120px class = "logo"></a>
+
+            <form class = "search">
+                <input type = "text" placeholder = "Search..." name = "search_bar" class = "search_box">
+            </form>
+
+            <a href = "../submit_art.html" class = "button">Submit</a>
+
+            <!--RIGHT-->
+            <div class = "dropdown_menu">
+                <div id = "user_menu">
+                    <h3 id = "username" style = "color: white;">froggycutie123</h3>
+
+                    <img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.reptilecentre.com%2Fsites%2FReptile%2Fimg%2Fcategory-header%2Fwhite-tree-frog-care.jpg&f=1&nofb=1" id = "avatar">
+                </div>
+
+                <!-- DROPDOWN MENU -->
+                <div id ="dropdown_contents">
+                    <a href="../froggycutie123/froggycutie123.html">Profile</a>
+                    <a href="../froggycutie123/froggycutie123_gallery_most_recent.html">Gallery</a>
+                    <a href="../froggycutie123/froggycutie123_favourites_most_recent.html">Favourites</a>
+                    <a href="../user_settings.html">Settings</a>
+                    <a href="../../../Non-User/home.html">Log out</a>
+                </div>
+            </div>
+
+            <a href = "#" id="to_top_button"><i class ="fa fa-arrow-up"></i></a>
+            
+        </div>
+        <!--BODY DIVISION-->
+        <div class = "display">
+            <div id = "navigation">
+                <div>
+                    <div class = "user_tab">
+                        <div>
+                            <img src = "https://i.imgur.com/DoZmeUW.png" id = "user_avatar">
+                        </div>
+
+                        <div>
+                            <a href="yesyesye.html"><h3 id = "username_profile">yesyesye</h3></a>
+                            <h5>@yesyesye</h5>
+                        </div>
+                    </div>
+                </div>
+                <div id = "home">
+                    <a href="yesyesye.html"><h2>Home</h2></a>
+                </div>
+
+                <div id = "gallery">
+                    <h2>Gallery</h2>
+                    <div class ="dropdown_sort_contents">
+                        <a href="yesyesye_gallery_most_popular.html">Most Popular</a>
+                        <a href="yesyesye_gallery_most_recent.html">Most Recent</a>
+                    </div>
+                </div>
+
+                <div id = "favourites">
+                    <h2>Favourites</h2>
+                    <div class ="dropdown_sort_contents">
+                        <a href="yesyesye_favourites_most_popular.html">Most Popular</a>
+                        <a href="yesyesye_favourites_most_recent.html">Most Recent</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "division">
+                <h3>Most Popular</h3>
+
+                <div class = "gallery_row">
+                    <div>
+                        <a href="#"><img src="https://i.pinimg.com/564x/ec/40/0b/ec400bde0dc64e02cf378a7a04174407.jpg" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://i.pinimg.com/564x/6d/4f/1d/6d4f1dd06213355c8e841fe999218a38.jpg" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://i.pinimg.com/564x/33/8c/68/338c6893110e035c85621ffb20f7b25a.jpg" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://i.pinimg.com/564x/15/3f/18/153f18a69dccb38c1e3bf6380785ebd3.jpg" class = "gallery_image"></a>
+                    </div>
+                </div>
+
+                <div class = "gallery_row">
+                    <div>
+                        <a href="#"><img src="https://i.pinimg.com/564x/34/0e/43/340e437c9fd795afa8c2082e367aae6b.jpg" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://i.pinimg.com/564x/5b/32/b8/5b32b8b939a2014acdc142decccd9e9a.jpg" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://i.pinimg.com/564x/06/32/fc/0632fc8849ad099d31ae9d128f788337.jpg" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://i.pinimg.com/564x/5d/de/33/5dde3396cdedc7c358e794be25956b76.jpg" class = "gallery_image"></a>
+                    </div>
+                </div>
+
+                <div class = "gallery_row">
+                    <div>
+                        <a href="#"><img src="https://i.pinimg.com/564x/fc/12/b9/fc12b9c98c403b8e639c716b812cbf20.jpg" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://i.pinimg.com/564x/04/19/70/041970674bc3f7e07cbc60a3ca2a61f6.jpg" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://i.pinimg.com/564x/b7/54/c2/b754c214958a631a1ae8916363523acf.jpg" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://i.pinimg.com/564x/06/fe/c5/06fec51369fb269798af9e68d73fef34.jpg" class = "gallery_image"></a>
+                    </div>
+                </div>
+
+                <div class = "gallery_row">
+                    <div>
+                        <a href="#"><img src="https://i.pinimg.com/564x/b4/53/2c/b4532c02a09307ad83fbcb85ce332335.jpg" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://i.pinimg.com/564x/49/0c/f8/490cf811698e69b61afbaf71a4451c35.jpg" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://i.pinimg.com/736x/fe/99/33/fe9933720ea6fb9a19c01c65bd38c873.jpg" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://i.pinimg.com/736x/d5/ec/fb/d5ecfbe63c66ca397b7dd0552dbafd84.jpg" class = "gallery_image"></a>
+                    </div>
+                </div>
+
+                <div class = "gallery_row">
+                    <div>
+                        <a href="#"><img src="https://i.pinimg.com/564x/68/44/35/6844351d04d25ae3f67628b9369a5bb5.jpg" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://i.pinimg.com/564x/9b/2b/b9/9b2bb960507b52861f908f1f12c3a216.jpg" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://i.pinimg.com/564x/a7/d5/c9/a7d5c98e1e7c14ae1b13df317030c481.jpg" class = "gallery_image"></a>
+                    </div>
+
+                    <div>
+                        <a href="#"><img src="https://i.pinimg.com/564x/80/e9/c8/80e9c892643eff0798ed8d464db9c132.jpg" class = "gallery_image"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--FOOTER PART-->
+        <div class = "myFooter">
+            <p>pixDev @ 2022</p>
+        </div>
+    </body>
+
+</html>

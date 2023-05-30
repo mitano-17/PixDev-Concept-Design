@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>pixDEV</title>
+		<link rel="icon" type="image/x-icon" href="../../../favicon.ico">
+		<!-- Insert external CSS file here -->
+        <link rel = "stylesheet" href = "../../../pixDEV_style_dark.css">
+
+		<style>
+			.body_section{
+				margin-left: 150px;
+				margin-right: 150px;
+				margin-top: 100px;
+				display: flex;
+				gap: 30px;
+			}
+
+			.profile_section{
+				background-color: rgb(37, 26, 38);
+				border: 2px solid rgb(71, 57, 92);
+				padding: 40px;
+				width: 30%;
+				height: 700px;
+			}
+
+			.catalog_section{
+				width: 70%;
+			}
+
+			#banner_image{
+				width: 100%;
+				height: 150px;
+				object-fit: cover;
+				background-color: rgb(37, 26, 38);
+				border: 2px solid rgb(71, 57, 92);
+			}
+
+			#avatar{
+				width: 280px;
+				height:  280px;
+				object-fit: cover;
+			}
+
+			#username_profile{
+				color: white;
+			}
+
+			#username_tag{
+				color: rgb(234, 66, 121);
+			}
+
+			p{
+				color: white;
+			}
+
+			.navigation a{
+				color: #4cb9ad;
+				padding: 12px 16px;
+				text-decoration: none;
+				display: block;
+				text-align: center;
+			}
+
+			.navigation a:hover{
+				background-color: #4cb9ad;
+				color: rgb(37, 26, 38);
+				transition-duration: 0.25s;
+			}
+
+			#location{
+				color: rgb(234, 66, 121);
+			}
+
+			.section{
+				background-color: rgb(37, 26, 38);
+				border: 2px solid rgb(71, 57, 92);
+				margin-top: 50px;
+			}
+
+			.section h2{
+				color: white;
+				text-decoration: none;
+				padding: 10px;
+				border-bottom: 2px solid rgb(71, 57, 92);
+			}
+
+			.section h3{
+				color: #4cb9ad;
+				text-decoration: none;
+				padding-left: 30px;
+			}
+
+			.gallery_image{
+        		width:  175px;
+        		height: 175px;
+        		object-fit: cover;
+        	}
+
+        	.gallery_row{
+        		display: flex;
+        		justify-content: center;
+        	}
+
+        	.gallery_row > div{
+        		margin: 10px;
+        	}
+
+        	.gallery_row > div:hover{
+        		cursor: pointer;
+        		opacity: 0.50;
+        		transition: 0.20s;
+        	}
+
+        	.division{
+        		border-bottom: 2px solid rgb(71, 57, 92);
+        	}
+
+        	.profile_row{
+        		display: flex;
+        	}
+
+        	.profile_column{
+        		gap: 10px;
+        		padding-left: 30px;
+        		padding-right: 30px;
+        		padding-bottom: 30px;
+        	}
+
+        	#id-photo{
+        		width: 280px;
+        		height: 300px;
+        		object-fit: cover;
+        	}
+
+        	#info p{
+        		color: #4cb9ad;
+        	}
+
+        	.profile_column a{
+        		color: rgb(234, 66, 121);
+        		text-decoration: none;
+        	}
+
+        	table{
+        		margin-top: 20px;
+        	}
+
+        	table tr td{
+        		color: #4cb9ad;
+        		width: 600px;
+        	}
+
+        	table .content_table{
+        		text-align: right;
+        	}
+
+        	.comments{
+				background-color: rgb(37, 26, 38);
+				border: 2px solid rgb(71, 57, 92);
+				margin-top: 30px;
+				margin-bottom: 30px;
+				padding:  30px;
+			}
+
+			.replies{
+				background-color: rgb(37, 26, 38);
+				border: 2px solid rgb(71, 57, 92);
+				margin-bottom: 30px;
+				padding:  30px;
+				margin-left: 150px;
+			}
+
+			.comments img{
+				width: 50px;
+				height: 50px;
+				float:  left;
+			}
+
+			.replies img{
+				width: 50px;
+				height: 50px;
+				float:  left;
+				object-fit: cover;
+			}
+
+			.username_responses{
+				margin-left: 60px;
+				color: #4cb9ad;
+			}
+
+			.replies #responses{
+				color: white;
+				margin-top: 20px;
+			}
+
+			.comments #responses{
+				color: white;
+				margin-top: 20px;
+			}
+
+			h2{
+				color: #4cb9ad;
+			}
+
+			.comment_options p{
+				color: rgb(180, 157, 180);
+			}
+
+			.comments a, .replies a{
+				color: rgb(234, 66, 121);
+				text-decoration: none;
+			}
+
+			.comments a:hover, .replies a:hover{
+				color: #4cb9ad;
+				text-decoration: underline;
+			}
+
+			.comment_options{
+				margin-top: 20px;
+				display: inline-flex;
+				gap: 30px;
+			}
+
+			#comment_box{
+				margin-top: 20px;
+				width: 100%;
+				background-color: white;
+				border: 2px solid rgb(71, 57, 92);
+				padding: 20px;
+			}
+
+			.button_submit{
+				display: flex;
+				justify-content: right;
+			}
+
+			#submit_button{
+				justify-content: right;
+				margin-top: 20px;
+				background-color: rgb(234, 66, 121);
+				color: white;
+				font-size: 20px;
+				border: none;
+				padding: 10px;
+				width: 100px;
+			}
+
+			#submit_button:hover{
+				background-color: rgb(180, 54, 128);
+				cursor: pointer;
+				transition-duration: 0.25s;
+			}
+
+			#submit_button:active{
+				background-color: #4cb9ad;
+				position: relative;
+				left: 2px;
+				top: 2px;
+			}
+
+			#comment_box:hover {
+			    background-color: lightyellow;
+			}
+
+			#comment_box:focus {
+			    background-color: lightyellow;
+			}
+
+		</style>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+
+	<body>
+		<!--HEADER PART-->
+		<div class = "myHeader">
+
+			<!--LEFT-->
+			<div class = "burger_menu">
+				<div id = "nav_menu">
+					<i class="fa fa-bars"></i>
+				</div>
+				<!--BURGER MENU-->
+				<div id ="burger_contents_div">
+					<i class="fa fa-bars"></i>
+					<img src = "../../../web_logo.png" width = 120px class = "menu_logo">
+					<div id = "burger_contents">
+						<a href="../home.html">Home</a>
+						<a href="#">About Us</a>
+						<a href="#">Contact Us</a>
+						<a href="#">Terms of Service</a>
+						<a href="#">Privacy Policy</a>
+					</div>
+					<div id = "menu_design">
+						<img src = "../../../menu_design.png" id = "menu_art">
+						<p>pixDev @ 2022</p>
+					</div>
+				</div>
+			</div>
+
+			<a href="../home.html"><img src = "../../../web_logo.png" width = 120px class = "logo"></a>
+
+			<form class = "search">
+				<input type = "text" placeholder = "Search..." name = "search_bar" class = "search_box">
+			</form>
+
+			<a href = "../submit_art.html" class = "button">Submit</a>
+
+			<!--RIGHT-->
+			<div class = "dropdown_menu">
+				<div id = "user_menu">
+					<h3 id = "username" style = "color: white;">froggycutie123</h3>
+
+					<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.reptilecentre.com%2Fsites%2FReptile%2Fimg%2Fcategory-header%2Fwhite-tree-frog-care.jpg&f=1&nofb=1" id = "avatar">
+				</div>
+
+				<!-- DROPDOWN MENU -->
+				<div id ="dropdown_contents">
+					<a href="../froggycutie123/froggycutie123.html">Profile</a>
+					<a href="../froggycutie123/froggycutie123_gallery_most_recent.html">Gallery</a>
+					<a href="../froggycutie123/froggycutie123_favourites_most_recent.html">Favourites</a>
+					<a href="../user_settings.html">Settings</a>
+					<a href="../../../Non-User/home.html">Log out</a>
+				</div>
+			</div>
+
+			<a href = "#" id="to_top_button"><i class ="fa fa-arrow-up"></i></a>
+			
+		</div>
+		<!--BODY DIVISION-->
+		<!-- profile section -->
+		<div class = "body_section">
+			<div class = "profile_section">
+				<img src = "../charizard/avatar.png" id = "avatar">
+				<a href = "charizard.html"><h3 id = "username_profile">charizard</h3></a>
+				<h5 id = "username_tag">@charcool006</h5>
+				<p>Don't need to introduce myself. You know me. I'm awesome.</p>
+				<br>
+				<span id ="location"><i class="material-icons">&#xe0c8;</i>Your mom's house</span>
+				<!-- list down links -->
+				<div class = "navigation">
+					<a href="charizard.html">Home</a>
+					<a href="charizard_gallery_most_recent.html">Gallery</a>
+					<a href="charizard_favourites_most_recent.html">Favourites</a>
+
+				</div>
+			</div>
+			<!-- banner section -->
+			<div class = "catalog_section">
+				<div class = "banner">
+					<img src = "banner.png" id = "banner_image">
+				</div>
+
+				<div class = "section">
+					<a href = "charizard.html"><h2><i class="fa fa-home" style="font-size: 40px; padding-left: 20px;"></i> Home</h2></a>
+					<div class = "division">
+						<a href="charizard_gallery_most_recent.html"><h3>Most Recent</h3></a>
+
+						<div class = "gallery_row">
+							<div>
+								<a href="../view_art3.html"><img src="https://static1.e621.net/data/sample/da/56/da567ae2e711c0a21897d153a35b072f.jpg" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://d.furaffinity.net/art/peterheat/1483509983/1483509983.peterheat_img_0587.png" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://d.furaffinity.net/art/peterheat/1490492076/1490492076.peterheat_img_1008.png" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://d.furaffinity.net/art/peterheat/1523649260/1523649260.peterheat_fortniteosha.png" class = "gallery_image"></a>
+							</div>
+						</div>
+
+						<div class = "gallery_row">
+							<div>
+								<a href="#"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d7428ab7-0fd8-43c3-80cd-163f1f2d7a7b/dcvo9i3-646b7147-486a-494a-a006-4b846604516b.png/v1/fill/w_1192,h_670,q_70,strp/shiny_chespin_x_quilladin_by_kuby64_dcvo9i3-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4MCIsInBhdGgiOiJcL2ZcL2Q3NDI4YWI3LTBmZDgtNDNjMy04MGNkLTE2M2YxZjJkN2E3YlwvZGN2bzlpMy02NDZiNzE0Ny00ODZhLTQ5NGEtYTAwNi00Yjg0NjYwNDUxNmIucG5nIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.SMyQytBYCZWMhbUrgukKRazsURXhoi1WZFxwqyml7hw" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://d.furaffinity.net/art/peterheat/1495599315/1495599315.peterheat_img_1201.png" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d7428ab7-0fd8-43c3-80cd-163f1f2d7a7b/dc9mcv7-bffbbd72-d073-4705-9ae0-4b15d0e28184.jpg/v1/fill/w_1192,h_670,q_70,strp/chesnaught_underwater_by_kuby64_dc9mcv7-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4MCIsInBhdGgiOiJcL2ZcL2Q3NDI4YWI3LTBmZDgtNDNjMy04MGNkLTE2M2YxZjJkN2E3YlwvZGM5bWN2Ny1iZmZiYmQ3Mi1kMDczLTQ3MDUtOWFlMC00YjE1ZDBlMjgxODQuanBnIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.aQZRp0zlbFiFMXz10R6dnwHS4THO_Zhuvs24o3HCTTw" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="charizard_gallery_most_recent.html"><i class="fa fa-arrow-right" style="font-size: 100px; padding-left: 20px;color: rgb(234, 66, 121); width: 175px; height: 175px; padding: 30px; padding-left: 45px;"></a></i>
+							</div>
+						</div>
+					</div>	
+
+					<div class = "division">
+						<a href="charizard_gallery_most_popular.html"><h3>Most Popular</h3></a>
+
+						<div class = "gallery_row">
+							<div>
+								<a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.tenor.com%2Fimages%2F0193a9caef231a21b85ae339496b7ea5%2Ftenor.gif%3Fitemid%3D14340787&f=1&nofb=1" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://static1.e621.net/data/sample/13/1c/131cb4976215aecc7c01855739ae4691.jpg" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://static1.e621.net/data/sample/d7/9d/d79da405b7196a251f3d0433ea1d9101.jpg" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b7863fec-b438-4de4-b5bb-1fbf6e863e1f/d9x3nbk-cc169580-4741-4545-8fa5-7ce4ce7b6537.jpg/v1/fill/w_900,h_675,q_75,strp/it_s_super_effective__by_demonmew_d9x3nbk-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9Njc1IiwicGF0aCI6IlwvZlwvYjc4NjNmZWMtYjQzOC00ZGU0LWI1YmItMWZiZjZlODYzZTFmXC9kOXgzbmJrLWNjMTY5NTgwLTQ3NDEtNDU0NS04ZmE1LTdjZTRjZTdiNjUzNy5qcGciLCJ3aWR0aCI6Ijw9OTAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.FPlfM2leKQmwbVs7PsarYnm116khQfpc3WETXN793oM" class = "gallery_image"></a>
+							</div>
+						</div>
+
+						<div class = "gallery_row">
+							<div>
+								<a href="#"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/edc68ab5-4b24-4601-bf0e-0a017e6f2be7/d2vjhu1-744d5af5-9e9d-462e-a5a6-135d2c307b72.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2VkYzY4YWI1LTRiMjQtNDYwMS1iZjBlLTBhMDE3ZTZmMmJlN1wvZDJ2amh1MS03NDRkNWFmNS05ZTlkLTQ2MmUtYTVhNi0xMzVkMmMzMDdiNzIuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.-jTphC2KUB5ULt4j6CA-zwSqwjyMYjOSHzdMvwHhQ34" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d3cb6d35-6082-47ac-93ee-2260fab7795a/d681frf-e9d2a861-3ee5-4178-95df-07ef5060e8ef.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2QzY2I2ZDM1LTYwODItNDdhYy05M2VlLTIyNjBmYWI3Nzk1YVwvZDY4MWZyZi1lOWQyYTg2MS0zZWU1LTQxNzgtOTVkZi0wN2VmNTA2MGU4ZWYuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.QMZNxPJyJjPwKJvvWB_N790srUOTUwMUlN0dvpdI4kE" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F8b%2F22%2Fc2%2F8b22c2b446f9f539693c305d7e599ef6.gif&f=1&nofb=1" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="charizard_gallery_most_popular.html"><i class="fa fa-arrow-right" style="font-size: 100px; padding-left: 20px;color: rgb(234, 66, 121); width: 175px; height: 175px; padding: 30px; padding-left: 45px;"></a></i>
+							</div>
+						</div>
+					</div>
+
+					<div class = "division">
+						<a href="charizard_favourites_most_recent.html"><h3>Favourites</h3></a>
+
+						<div class = "gallery_row">
+							<div>
+								<a href="#"><img src="https://i.pinimg.com/564x/12/3a/29/123a29905ea9d4f23e4ca7d8c076f19f.jpg" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://i.pinimg.com/564x/e3/04/d1/e304d1e596421bc25067487ba9784962.jpg" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://i.pinimg.com/564x/bd/a8/bc/bda8bce474950cd13b889629d4cf60c9.jpg" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F13%2F57%2F33%2F135733b07291badc8cb3c083d4fd90b0.gif&f=1&nofb=1" class = "gallery_image"></a>
+							</div>
+						</div>
+
+						<div class = "gallery_row">
+							<div>
+								<a href="#"><img src="https://i.pinimg.com/736x/99/54/4b/99544b0cb26ee37f503db46dc3d4174c.jpg" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://i.pinimg.com/564x/7e/7f/c1/7e7fc19f075a16c2e4ab6d3e0d250385.jpg" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="#"><img src="https://i.pinimg.com/736x/b2/c0/08/b2c00845025f205d957f6d33f4c951b3.jpg" class = "gallery_image"></a>
+							</div>
+
+							<div>
+								<a href="charizard_favourites_most_recent.html"><i class="fa fa-arrow-right" style="font-size: 100px; padding-left: 20px;color: rgb(234, 66, 121); width: 175px; height: 175px; padding: 30px; padding-left: 45px;"></a></i>
+							</div>
+						</div>
+					</div>
+
+					<div class = "division">
+						<h3>About Me</h3>
+
+						<div class = "profile_row">
+							<div class = "profile_column">
+								<p>- Top #4 2020's best actor of the Pokemon series<br>
+								- Renowned actor since 1996<br>
+								- Big in Japan<br>
+								- I do business. I own 5 brands of clothing<br>
+								Want to negotiate? Shoot me an email on charcool@hotmail.com
+								</p>
+
+								<table>
+									<tr>
+										<td><b>Name</b></td>
+										<td class="content_table">charizard</td>
+									</tr>
+									<tr>
+										<td><b>Gender</b></td>
+										<td class="content_table">Male</td>
+									</tr>
+									<tr>
+										<td><b>Birthday</b></td>
+										<td class="content_table">June 06, 1978</td>
+									</tr>
+									<tr>
+										<td><b>Occupation</b></td>
+										<td class="content_table">Entrepreneur, fighter, and professional gamer</td>
+									</tr>
+								</table>
+							</div>
+
+							<div class = "profile_column">
+								<img src = "charizard.png" id = "id-photo">
+							</div>
+						</div>
+					</div>	
+				</div>
+				<!-- comment section -->
+				<h2>Comments</h2>
+
+					<div class = "comments">
+						<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.reptilecentre.com%2Fsites%2FReptile%2Fimg%2Fcategory-header%2Fwhite-tree-frog-care.jpg&f=1&nofb=1">
+						<a href = "froggycutie123.html"><h3 class = "username_responses">froggycutie123</h3></a>
+
+						<form action="/html/tags/html_form_tag_action.cfm" method="post">
+							<textarea name="comments" id = "comment_box" placeholder="Leave a comment">
+							</textarea>
+							<div class = "button_submit">
+								<input type="submit" value="Post" id = "submit_button">
+							</div>
+						</form>
+						
+					</div>
+
+					<div class = "comments">
+						<img src = "friend_avatar.png">
+						<a href="#"><h3 class = "username_responses">venusaur</h3></a>
+						<p id = "responses">DEEZ NUTZ</p>
+						<div class = "comment_options">
+							<div><p>April 4, 2022</p></div>
+							<div><p>16:15</p></div>
+							<div><a href = "#">Reply</a></div>
+						</div>
+					</div>
+
+					<div class = "comments">
+						<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fyt3.ggpht.com%2Fa%2FAATXAJzrpwZJs5j0Uu-5SpgWat5Ocv0pEq0BpH5ryg%3Ds900-c-k-c0xffffffff-no-rj-mo&f=1&nofb=1">
+						<a href="#"><h3 class = "username_responses">wisecrack</h3></a>
+						<p id = "responses">"Professional gamer" ah yes the typical kind of loser living in their mom's basement.</p>
+						<div class = "comment_options">
+							<div><p>April 4, 2022</p></div>
+							<div><p>16:15</p></div>
+							<div><a href = "#">Reply</a></div>
+						</div>
+					</div>
+
+					<div class = "comments">
+						<img src = "enemy_avatar2.png">
+						<a href="#"><h3 class = "username_responses">jordan</h3></a>
+						<p id = "responses">Boi, do you like Dragon Ball? Cos imma dragon my balls on your face</p>
+						<div class = "comment_options">
+							<div><p>April 4, 2022</p></div>
+							<div><p>16:15</p></div>
+							<div><a href = "#">Reply</a></div>
+						</div>
+					</div>
+
+					<div class = "replies">
+						<img src = "avatar.png">
+						<a href="#"><h3 class = "username_responses">charizard</h3></a>
+						<p id = "responses">Your mom must be so disappointed for giving birth to a failure like you who ends up being such a degenerate.</p>
+						<div class = "comment_options">
+							<div><p>March 30, 2022</p></div>
+							<div><p>7:41</p></div>
+							<div><a href = "#">Reply</a></div>
+						</div>
+					</div>
+
+					<div class = "comments">
+						<img src = "../gekkouga-san/friend_avatar.png">
+						<a href="#"><h3 class = "username_responses">brigaron</h3></a>
+						<p id = "responses">I like how you flaunt that you're the best when in fact your art's lame. Dunno if I should call them art because they all suck s***.</p>
+						<div class = "comment_options">
+							<div><p>March 28, 2022</p></div>
+							<div><p>9:35</p></div>
+							<div><a href = "#">Reply</a></div>
+						</div>
+					</div>
+
+					<div class = "replies">
+						<img src = "avatar.png">
+						<a href="#"><h3 class = "username_responses">charizard</h3></a>
+						<p id = "responses">You should call yourself art if that's how you define it, dumb***</p>
+						<div class = "comment_options">
+							<div><p>March 30, 2022</p></div>
+							<div><p>7:41</p></div>
+							<div><a href = "#">Reply</a></div>
+						</div>
+					</div>
+
+					<div class = "replies">
+						<img src = "friend_avatar2.png">
+						<a href="charizard.html"><h3 class = "username_responses">blastoise</h3></a>
+						<p id = "responses"><a href="#">@nutboy02</a> GET WREKT</p>
+						<div class = "comment_options">
+							<div><p>April 6, 2022</p></div>
+							<div><p>22:09</p></div>
+							<div><a href = "#">Reply</a></div>
+						</div>
+					</div>
+
+					<div class = "comments">
+						<img src = "friend_avatar3.png">
+						<a href="#"><h3 class = "username_responses">intel-eon</h3></a>
+						<p id = "responses">do you sell nfts?</p>
+						<div class = "comment_options">
+							<div><p>February 16, 2022</p></div>
+							<div><p>21:13</p></div>
+							<div><a href = "#">Reply</a></div>
+						</div>
+					</div>
+
+					<div class = "replies">
+						<img src = "avatar.png">
+						<a href="#"><h3 class = "username_responses">charizard</h3></a>
+						<p id = "responses">Shoot me a pm</p>
+						<div class = "comment_options">
+							<div><p>March 30, 2022</p></div>
+							<div><p>7:41</p></div>
+							<div><a href = "#">Reply</a></div>
+						</div>
+					</div>
+
+					<div class = "replies">
+						<img src = "friend_avatar3.png">
+						<a href="#"><h3 class = "username_responses">intel-eon</h3></a>
+						<p id = "responses">done</p>
+						<div class = "comment_options">
+							<div><p>February 16, 2022</p></div>
+							<div><p>21:13</p></div>
+							<div><a href = "#">Reply</a></div>
+						</div>
+					</div>
+
+					<div class = "comments">
+						<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fclipground.com%2Fimages%2Fturtwig-clipart-11.png&f=1&nofb=1">
+						<a href="#"><h3 class = "username_responses">wiggum</h3></a>
+						<p id = "responses">Can you draw me and oshawott wrestling in the park?</p>
+						<div class = "comment_options">
+							<div><p>April 4, 2022</p></div>
+							<div><p>16:15</p></div>
+							<div><a href = "#">Reply</a></div>
+						</div>
+					</div>
+
+					<div class = "replies">
+						<img src = "avatar.png">
+						<a href="#"><h3 class = "username_responses">charizard</h3></a>
+						<p id = "responses">No</p>
+						<div class = "comment_options">
+							<div><p>March 30, 2022</p></div>
+							<div><p>7:41</p></div>
+							<div><a href = "#">Reply</a></div>
+						</div>
+					</div>
+
+					<div class = "comments">
+						<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.VM7unozrXZ8TGGm74lpZkgHaJI%26pid%3DApi&f=1">
+						<a href="../sobble-bubble/sobble-bubble.html"><h3 class = "username_responses">sobble-bubble</h3></a>
+						<p id = "responses">I made art for you! ^^ <br><br><img src="https://i.pinimg.com/564x/c2/af/bf/c2afbf85f891b61ac54812e89cedcfd2.jpg" style = "width: 100px; height: 100px;"><br><br><br><br><br></p>
+						<div class = "comment_options">
+							<div><p>April 4, 2022</p></div>
+							<div><p>16:15</p></div>
+							<div><a href = "#">Reply</a></div>
+						</div>
+					</div>
+
+					<div class = "replies">
+						<img src = "avatar.png">
+						<a href="#"><h3 class = "username_responses">charizard</h3></a>
+						<p id = "responses">Cute. Thank you!</p>
+						<div class = "comment_options">
+							<div><p>March 30, 2022</p></div>
+							<div><p>7:41</p></div>
+							<div><a href = "#">Reply</a></div>
+						</div>
+					</div>
+
+					<div class = "comments">
+						<img src = "enemy_avatar3.png">
+						<a href="#"><h3 class = "username_responses">alladin</h3></a>
+						<p id = "responses">SUCK MY *****</p>
+						<div class = "comment_options">
+							<div><p>April 4, 2022</p></div>
+							<div><p>16:15</p></div>
+							<div><a href = "#">Reply</a></div>
+						</div>
+					</div>
+
+					<div class = "comments">
+						<img src = "enemy_avatar3.png">
+						<a href="#"><h3 class = "username_responses">alladin</h3></a>
+						<p id = "responses">EAT ****</p>
+						<div class = "comment_options">
+							<div><p>April 4, 2022</p></div>
+							<div><p>16:15</p></div>
+							<div><a href = "#">Reply</a></div>
+						</div>
+					</div>
+
+					<div class = "comments">
+						<img src = "friend_avatar.png">
+						<a href="#"><h3 class = "username_responses">venusaur</h3></a>
+						<p id = "responses">AMOGUS</p>
+						<div class = "comment_options">
+							<div><p>April 4, 2022</p></div>
+							<div><p>16:15</p></div>
+							<div><a href = "#">Reply</a></div>
+						</div>
+					</div>
+
+					<div class = "comments">
+						<img src = "enemy_avatar.png">
+						<a href="#"><h3 class = "username_responses">bulletseed254</h3></a>
+						<p id = "responses">I was only nine years old. I loved Shrek so much, I had all the merchandise and movies. I'd pray to Shrek every night before I go to bed, thanking for the life I've been given. "Shrek is love", I would say, "Shrek is life". My dad hears me and calls me a ******. I knew he was just jealous for my devotion of Shrek. I called him a ****. He slaps me and sends me to go to sleep. I'm crying now and my face hurts. I lay in bed and it's really cold. A warmth is moving towards me. I feel something touch me. It's Shrek. I'm so happy. He whispers in my ear, "This is my swamp". He grabs me with his powerful ogre hands, and puts me on my hands and knees. I spread my ***-****** for Shrek. He penetrates my ********. It hurts so much, but I do it for Shrek. I can feel my **** tearing as my eyes start to water. I push against his force. I want to please Shrek. He roars a mighty roar, as he fills my **** with his love. My dad walks in. Shrek looks him straight in the eye, and says, "It's all ogre now". Shrek leaves through my window. Shrek is love. Shrek is life.﻿</p>
+						<div class = "comment_options">
+							<div><p>April 4, 2022</p></div>
+							<div><p>16:15</p></div>
+							<div><a href = "#">Reply</a></div>
+						</div>
+					</div>
+			</div>
+		</div>
+		
+		<!--FOOTER PART-->
+		<div class = "myFooter">
+			<p>pixDev @ 2022</p>
+		</div>
+	</body>
+
+</html>

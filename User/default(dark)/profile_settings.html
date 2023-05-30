@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>pixDEV</title>
+		<link rel="icon" type="image/x-icon" href="../../favicon.ico">
+		<style>
+			.division{
+				display: flex;
+			}
+
+			#left_division{
+				width: 25%;
+				display: block;
+				border-right: 2px solid rgb(71, 57, 92);
+			}
+
+			#left_division .tab{
+				color: #4cb9ad;
+				border-bottom: 2px solid rgb(71, 57, 92);
+				width: 100%;
+				height: 80px;
+				text-align: center;
+				padding: 20px;
+			}
+
+			#left_division #h_tab{
+				background-color: #4cb9ad;
+				color: rgb(37, 26, 38);
+				border-bottom: 2px solid rgb(71, 57, 92);
+				width: 100%;
+				height: 80px;
+				text-align: center;
+				padding: 20px;
+			}
+
+			#left_division .tab:hover{
+				background-color: rgb(234, 66, 121);
+				color: rgb(37, 26, 38);
+				cursor: pointer;
+			}
+
+			#left_division #h_tab:hover{
+				background-color: rgb(234, 66, 121);
+				color: rgb(37, 26, 38);
+				cursor: pointer;
+			}
+
+			#left_division #space{
+				height: 300px;
+			}
+
+			#left_division #space p{
+				display: none;
+			}
+
+			#left_division a{
+				text-decoration: none;
+				font-size: 24px;
+				cursor: pointer;
+				padding: 20px 40px 20px 40px;
+			}
+
+			#right_division{
+				width: 75%;
+				padding: 20px;
+				padding-top: 5px;
+			}
+
+			#right_division h2{
+				color: #4cb9ad;
+			}
+
+			table{
+        		margin: 20px 40px 20px 40px;
+        	}
+
+        	table tr td{
+        		color: white;
+        		font-size: 18px;
+        		padding: 20px;
+        	}
+
+        	table .right_row{
+        		text-align: right;
+        	}
+
+        	#male, #female, #other{
+        		background-color: lightyellow;
+        	}
+
+			.name_box, .location_box, .occupation_box, #birthday{
+				padding: 5px 10px 5px 10px;
+				width: 100%;
+			}
+
+			.about_me_box, .intro_box{
+				width: 100%;
+				padding: 5px 10px 5px 10px;
+				height: 150px;
+			}
+
+			.submit{
+				margin-top: 20px;
+				text-align: center;
+				text-decoration: none;
+				background-color: rgb(234, 66, 121);
+				color: white;
+				font-size: 20px;
+				border: none;
+				padding: 10px;
+				width: 150px;
+				cursor: pointer;	
+			}
+
+			.submit:hover{
+				background-color: rgb(180, 54, 128);
+				color: white;
+				transition:  0.25s;				
+			}
+
+			.submit:active{
+				background-color: #4cb9ad;
+				color: white;
+				position: relative;	
+				left: 2px;
+				top: 2px;	
+			}
+
+			.name_box:hover, .location_box:hover, .occupation_box:hover, #birthday:hover, .about_me_box:hover, .intro_box:hover{
+				background-color: lightyellow;
+			}
+
+			.name_box:active, .location_box:active, .occupation_box:active, #birthday:active, .about_me_box:active, .intro_box:active{
+				background-color: lightyellow;
+			}
+
+			input[type = text]:focus, input[type = password]:focus, input[type = date]:focus, textarea[type = description]:focus{
+			    background-color: lightyellow;
+			}
+
+			#myfile, #myfile2{
+				display: none;
+			}
+
+			.uploads{
+				display: flex;
+				padding: 10px;
+				cursor: pointer;
+				background-color: #4cb9ad;
+				color: white;
+				justify-content: center;
+				font-size: 20px;
+				width: 300px;
+				margin-left: 150px;
+			}
+
+			.uploads:hover{
+				background-color: rgb(234, 66, 121);
+				transition-duration: 0.25s;
+			}
+
+			.uploads:active{
+				background-color: #4cb9ad;
+				color: white;
+				position: relative;	
+				left: 2px;
+				top: 2px;
+			}
+
+			.uploads i{
+				font-size: 24px;
+				margin-right: 10px;
+				margin-left: 10px;
+				margin-top: 3px;
+			}
+
+			.left_row{
+				display: block;
+			}
+
+			h5{
+				color: rgb(180, 157, 180);
+			}
+
+		</style>
+		<!-- Insert external CSS file here -->
+        <link rel = "stylesheet" href = "../../pixDEV_style_dark.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	
+	<body>
+	<div class = "myHeader">
+
+			<!--LEFT-->
+			<div class = "burger_menu">
+				<div id = "nav_menu">
+					<i class="fa fa-bars"></i>
+				</div>
+				<!--BURGER MENU-->
+				<div id ="burger_contents_div">
+					<i class="fa fa-bars"></i>
+					<img src = "../../web_logo.png" width = 120px class = "menu_logo">
+					<div id = "burger_contents">
+						<a href="./home.html">Home</a>
+						<a href="#">About Us</a>
+						<a href="#">Contact Us</a>
+						<a href="#">Terms of Service</a>
+						<a href="#">Privacy Policy</a>
+					</div>
+					<div id = "menu_design">
+						<img src = "../../menu_design.png" id = "menu_art">
+						<p>pixDev @ 2022</p>
+					</div>
+				</div>
+			</div>
+			
+			<a href="home.html"><img src = "../../web_logo.png" width = 120px class = "logo"></a>
+
+			<form class = "search">
+				<input type = "text" placeholder = "Search..." name = "search_bar" class = "search_box">
+			</form>
+
+			<a href = "submit_art.html" class = "button">Submit</a>
+
+			<!--RIGHT-->
+			<div class = "dropdown_menu">
+				<div id = "user_menu">
+					<h3 id = "username" style = "color: white;">froggycutie123</h3>
+
+					<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.reptilecentre.com%2Fsites%2FReptile%2Fimg%2Fcategory-header%2Fwhite-tree-frog-care.jpg&f=1&nofb=1" id = "avatar">
+				</div>
+
+				<!-- DROPDOWN MENU -->
+				<div id ="dropdown_contents">
+					<a href="./froggycutie123/froggycutie123.html">Profile</a>
+					<a href="./froggycutie123/froggycutie123_gallery_most_recent.html">Gallery</a>
+					<a href="./froggycutie123/froggycutie123_favourites_most_recent.html">Favourites</a>
+					<a href="user_settings.html">Settings</a>
+					<a href="../../Non-User/home.html">Log out</a>
+				</div>
+			</div>
+
+			<a href = "#" id="to_top_button"><i class ="fa fa-arrow-up"></i></a>
+			
+		</div>
+		<!-- BODY -->
+		<div class = "display">
+			<h1>Settings</h1>
+			<div class = "division">
+				<div id = "left_division">
+					<div class = "tab">
+						<a href="user_settings.html">User Settings</a>
+					</div>
+
+					<div id = "h_tab">
+						<a href="profile_settings.html">Profile</a>
+					</div>
+
+					<div class = "tab">
+						<a href="display.html">Display</a>
+					</div>
+
+					<div id = "space">
+						<p>empty div</p>
+					</div>
+				</div>
+
+				<div id = "right_division">
+					<h2>Profile</h2>
+
+					<table>
+						<tr>
+							<td class = "left_row"><label for="avatar_upload">Avatar</label>
+								<h5>Resolution must be 800x800</h5></td>
+							<td class = "right_row"><form action="/action_page.php">
+							<label class="uploads">
+							<input type="file" id="myfile" name="myfile"><i class ="fa fa-folder-open"></i>Select file
+							</label>
+							</form></td>
+						</tr>
+
+						<tr>
+							<td class = "left_row"><label for="username_ID_field">Profile Banner</label>
+								<h5>Resolution must be 1030x180</h5></td>
+							<td class = "right_row"><form action="/action_page.php">
+							<label class="uploads">
+							<input type="file" id="myfile2" name="myfile2"><i class ="fa fa-folder-open"></i>Select file
+							</label>
+							</form></td>
+						</tr>
+
+						<tr>
+							<td class = "left_row"><label for="name_tag">Name</label></td>
+							<td class = "right_row"><form class = "name_tag">
+								<input type = "text" placeholder = "John Doe" name = "name_tag" class = "name_box">
+							</form></td>
+						</tr>
+
+						<tr>
+							<td class = "left_row"><label for="intro">Introduction</label></td>
+							<td class = "right_row"><form class = "intro">
+								<textarea type = "description" placeholder = "Introduce yourself" name = "intro" class = "intro_box" maxlength = "150"></textarea>
+							</form></td>
+						</tr>
+
+						<tr>
+							<td class = "left_row"><label for="location">Location</label></td>
+							<td class = "right_row"><form class = "location">
+								<input type = "text" placeholder = "Germany" name = "location" class = "location_box">
+							</form></td>
+						</tr>
+
+						<tr>
+							<td class = "left_row"><label for="gender">Gender</label></td>
+							<td id="gender_choices">
+								<div class = "genders">
+									<input type="radio" id="male" name="gender_choices" value="male">
+									<label for="male">Male</label><br>
+								</div>
+
+								<div class = "genders">
+									<input type="radio" id="female" name="gender_choices" value="female">
+									<label for="female">Female</label><br>
+								</div>
+
+								<div class = "genders">
+									<input type="radio" id="other" name="gender_choices" value="other" checked>
+									<label for="other">Other</label>
+								</div>
+
+							</form></td>
+						</tr>
+
+						<tr>
+							<td class = "left_row"><label for="birthday">Birthday</label></td>
+							<td class = "right_row">
+								<form action="/action_page.php">
+								  <input type="date" id="birthday" name="birthday">
+								</form>
+							</form></td>
+						</tr>
+
+						<tr>
+							<td class = "left_row"><label for="occupation">Occupation</label></td>
+							<td class = "right_row"><form class = "occupation">
+								<input type = "text" placeholder = "Artist" name = "occupation" class = "occupation_box">
+							</form></td>
+						</tr>
+
+						<tr>
+							<td class = "left_row"><label for="about_me">About Me</label></td>
+							<td class = "right_row"><form class = "about_me">
+								<textarea type = "description" placeholder = "Tell us a little bit about yourself" name = "about_me" class = "about_me_box" maxlength = "300"></textarea>
+							</form></td>
+						</tr>
+
+						<tr>
+							<td class = "left_row"></td>
+							<td class = "right_row"><button class="submit" type="submit">Update</button></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!--FOOTER PART-->
+		<div class = "myFooter">
+			<p>pixDev @ 2022</p>
+		</div>
+</body>
+	
+</html>

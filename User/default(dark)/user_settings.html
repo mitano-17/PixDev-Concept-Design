@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>pixDEV</title>
+		<link rel="icon" type="image/x-icon" href="../../favicon.ico">
+		<style>
+			.division{
+				display: flex;
+			}
+
+			#left_division{
+				width: 25%;
+				display: block;
+				border-right: 2px solid rgb(71, 57, 92);
+			}
+
+			#left_division .tab{
+				color: #4cb9ad;
+				border-bottom: 2px solid rgb(71, 57, 92);
+				width: 100%;
+				height: 80px;
+				text-align: center;
+				padding: 20px;
+			}
+
+			#left_division #h_tab{
+				background-color: #4cb9ad;
+				color: rgb(37, 26, 38);
+				border-bottom: 2px solid rgb(71, 57, 92);
+				width: 100%;
+				height: 80px;
+				text-align: center;
+				padding: 20px;
+			}
+
+			#left_division .tab:hover{
+				background-color: rgb(234, 66, 121);
+				color: rgb(37, 26, 38);
+				cursor: pointer;
+			}
+
+			#left_division #h_tab:hover{
+				background-color: rgb(234, 66, 121);
+				color: rgb(37, 26, 38);
+				cursor: pointer;
+			}
+
+			#left_division #space{
+				height: 300px;
+			}
+
+			#left_division #space p{
+				display: none;
+			}
+
+			#left_division a{
+				text-decoration: none;
+				font-size: 24px;
+				cursor: pointer;
+				padding: 20px 40px 20px 40px;
+			}
+
+			#right_division{
+				width: 75%;
+				padding: 20px;
+				padding-top: 5px;
+			}
+
+			#right_division h2{
+				color: #4cb9ad;
+			}
+
+			table{
+        		margin: 20px 40px 20px 40px;
+        	}
+
+        	table tr td{
+        		color: white;
+        		width: 600px;
+        		font-size: 18px;
+        		padding: 20px;
+        	}
+
+        	table .content_table{
+        		text-align: right;
+        		display: block;
+        	}
+
+			.username_box, .username_ID_box, .email_box, .password, .confirm_password{
+				padding: 5px 10px 5px 10px;
+				width: 300px;
+			}
+
+			.submit{
+				margin-top: 20px;
+				text-align: center;
+				text-decoration: none;
+				background-color: rgb(234, 66, 121);
+				color: white;
+				font-size: 20px;
+				border: none;
+				padding: 10px;
+				width: 150px;
+				cursor: pointer;	
+			}
+
+			.submit:hover{
+				background-color: rgb(180, 54, 128);
+				color: white;
+				transition:  0.25s;				
+			}
+
+			.submit:active{
+				background-color: #4cb9ad;
+				color: white;
+				position: relative;	
+				left: 2px;
+				top: 2px;	
+			}
+
+			.username_box:hover, .username_ID_box:hover, .email_box:hover, .password:hover, .confirm_password:hover{
+				background-color: lightyellow;
+			}
+
+			.username_box:active, .username_ID_box:active, .email_box:active, .password:active, .confirm_password:active{
+				background-color: lightyellow;
+			}
+
+			.status{
+				text-align: center;
+				text-decoration: none;
+				background-color: rgb(71, 57, 92);
+				color: white;
+				font-size: 20px;
+				border: none;
+				padding: 10px;
+				width: 180px;
+				margin-top: 20px;
+				cursor: pointer;	
+				margin-right: -30px;			
+			}
+
+			.status:hover{
+				background-color: #4cb9ad;
+				transition: 0.25s;
+			}
+
+			input[type = text]:focus , input[type = password]:focus{
+			    background-color: lightyellow;
+			}
+
+		</style>
+		<!-- Insert external CSS file here -->
+        <link rel = "stylesheet" href = "../../pixDEV_style_dark.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	
+	<body>
+	<div class = "myHeader">
+
+			<!--LEFT-->
+			<div class = "burger_menu">
+				<div id = "nav_menu">
+					<i class="fa fa-bars"></i>
+				</div>
+				<!--BURGER MENU-->
+				<div id ="burger_contents_div">
+					<i class="fa fa-bars"></i>
+					<img src = "../../web_logo.png" width = 120px class = "menu_logo">
+					<div id = "burger_contents">
+						<a href="./home.html">Home</a>
+						<a href="#">About Us</a>
+						<a href="#">Contact Us</a>
+						<a href="#">Terms of Service</a>
+						<a href="#">Privacy Policy</a>
+					</div>
+					<div id = "menu_design">
+						<img src = "../../menu_design.png" id = "menu_art">
+						<p>pixDev @ 2022</p>
+					</div>
+				</div>
+			</div>
+			
+			<a href="home.html"><img src = "../../web_logo.png" width = 120px class = "logo"></a>
+
+			<form class = "search">
+				<input type = "text" placeholder = "Search..." name = "search_bar" class = "search_box">
+			</form>
+
+			<a href = "submit_art.html" class = "button">Submit</a>
+
+			<!--RIGHT-->
+			<div class = "dropdown_menu">
+				<div id = "user_menu">
+					<h3 id = "username" style = "color: white;">froggycutie123</h3>
+
+					<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.reptilecentre.com%2Fsites%2FReptile%2Fimg%2Fcategory-header%2Fwhite-tree-frog-care.jpg&f=1&nofb=1" id = "avatar">
+				</div>
+
+				<!-- DROPDOWN MENU -->
+				<div id ="dropdown_contents">
+					<a href="./froggycutie123/froggycutie123.html">Profile</a>
+					<a href="./froggycutie123/froggycutie123_gallery_most_recent.html">Gallery</a>
+					<a href="./froggycutie123/froggycutie123_favourites_most_recent.html">Favourites</a>
+					<a href="user_settings.html">Settings</a>
+					<a href="../../Non-User/home.html">Log out</a>
+				</div>
+			</div>
+
+			<a href = "#" id="to_top_button"><i class ="fa fa-arrow-up"></i></a>
+			
+		</div>
+		<!-- BODY -->
+		<div class = "display">
+			<h1>Settings</h1>
+			<div class = "division">
+				<div id = "left_division">
+					<div id = "h_tab">
+						<a href="user_settings.html">User Settings</a>
+					</div>
+
+					<div class = "tab">
+						<a href="profile_settings.html">Profile</a>
+					</div>
+
+					<div class = "tab">
+						<a href="display.html">Display</a>
+					</div>
+
+					<div id = "space">
+						<p>empty div</p>
+					</div>
+				</div>
+
+				<div id = "right_division">
+					<h2>User Settings</h2>
+
+					<table>
+						<tr>
+							<td><label for="username_field">Username</label></td>
+							<td class="content_table"><form class = "username">
+								<input type = "text" placeholder = "username" name = "username_field" class = "username_box">
+							</form></td>
+						</tr>
+						<tr>
+							<td><label for="username_ID_field">Username ID</label></td>
+							<td class="content_table"><form class = "username_ID">
+								<input type = "text" placeholder = "@username_ID" name = "username_ID_field" class = "username_ID_box">
+							</form></td>
+						</tr>
+						<tr>
+							<td><label for="email">Email Address</label></td>
+							<td class="content_table"><form class = "email">
+								<input type = "text" placeholder = "username@email" name = "email" class = "email_box">
+							</form></td>
+						</tr>
+						<tr>
+							<td><label for="psw">New Password</label></td>
+							<td class="content_table"><input type="password" placeholder="Password" name="psw" class = "password"></td>
+						</tr>
+						<tr>
+							<td><label for="psw2">Confirm New Password</label></td>
+							<td class="content_table"><input type="password" placeholder="Confirm Password" name="psw2" class = "confirm_password" required></td>
+						</tr>
+						<tr>
+							<td><button class="status" type="submit">Delete Account</button></td>
+							<td class="content_table"><button class="submit" type="submit">Update</button></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!--FOOTER PART-->
+		<div class = "myFooter">
+			<p>pixDev @ 2022</p>
+		</div>
+</body>
+	
+</html>

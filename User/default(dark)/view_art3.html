@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>pixDEV</title>
+		<!-- Insert external CSS file here -->
+        <link rel = "stylesheet" href = "../../pixDEV_style_dark.css">
+        <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+        <style>
+        	.division{
+        		display: block;
+        	}
+
+        	.display #artwork{
+				padding-left: 100px;
+				padding-right: 100px;
+				padding-top: 60px;
+				padding-bottom: 60px;
+				border-bottom: 2px solid rgb(71, 57, 92);
+			}
+
+			.display #artwork img{
+				width: 100%;
+				height: auto;
+			}
+
+			.display .description{
+				padding: 30px;
+				color: white;
+				border-bottom: 2px solid rgb(71, 57, 92);
+			}
+
+			.display .user_display{
+				margin-top: 30px;
+				margin-bottom: 30px;
+				height:  80px;
+				padding-left: 30px;
+				padding-right: 30px;
+				border-bottom: 2px solid rgb(71, 57, 92);
+			}
+
+			.display .user_display img{
+				width:  50px;
+				height:  50px;
+				float:  left;
+				margin-right: 10px;
+				margin-top: 10px;
+			}
+
+			.display .user_display #username_profile{
+				margin-bottom: 0;
+				color: white;
+			}
+
+			.display .user_display h5{
+				color: rgb(234, 66, 121);
+				margin-top: -5px;
+			}
+
+			#statistics{
+				display: flex;
+				justify-content: right;
+				margin: -60px;
+			}
+
+			#statistics > div {
+				margin: 10px;
+				padding: 20px;
+			}
+
+			#statistics span{
+				color: rgb(180, 157, 180);
+			}
+
+			.display i{
+				color: rgb(180, 157, 180)
+			}
+
+			.comment_box{
+				margin-left: 150px;
+				margin-right: 150px;
+				margin-top: 20px;
+			}
+
+			h2{
+				color: #4cb9ad;
+			}
+
+			.comments{
+				background-color: rgb(37, 26, 38);
+				margin-left: 150px;
+				margin-right: 150px;
+				margin-top: 30px;
+				margin-bottom: 30px;
+				border: 2px solid rgb(71, 57, 92);
+				padding:  30px;
+			}
+
+			.replies{
+				background-color: rgb(37, 26, 38);
+				margin-left: 300px;
+				margin-right: 150px;
+				margin-top: 30px;
+				margin-bottom: 30px;
+				border: 2px solid rgb(71, 57, 92);
+				padding:  30px;
+			}
+
+			.comments img{
+				width: 50px;
+				height: 50px;
+				float:  left;
+			}
+
+			.replies img{
+				width: 50px;
+				height: 50px;
+				float:  left;
+			}
+
+			.username_responses{
+				margin-left: 60px;
+				color: #4cb9ad;
+			}
+
+			.replies #responses{
+				color: white;
+				margin-top: 20px;
+			}
+
+			.comments #responses{
+				color: white;
+				margin-top: 20px;
+			}
+
+			.comment_options{
+				margin-top: 20px;
+				display: inline-flex;
+				gap: 30px;
+			}
+
+			.comment_options p{
+				color: rgb(180, 157, 180);
+			}
+
+			.comments a, .replies a{
+				color: rgb(234, 66, 121);
+				text-decoration: none;
+			}
+
+			.comments a:hover, .replies	a:hover{
+				color: #4cb9ad;
+			}
+
+			#comment_box{
+				margin-top: 20px;
+				width: 100%;
+				background-color: white;
+				border: 2px solid rgb(71, 57, 92);
+				padding: 20px;
+			}
+
+			.button_submit{
+				display: flex;
+				justify-content: right;
+			}
+
+			#submit_button{
+				justify-content: right;
+				margin-top: 20px;
+				background-color: rgb(234, 66, 121);
+				color: white;
+				font-size: 20px;
+				border: none;
+				padding: 10px;
+				width: 100px;
+			}
+
+			#submit_button:hover{
+				background-color: rgb(180, 54, 128);
+				cursor: pointer;
+				transition-duration: 0.25s;
+			}
+
+			#submit_button:active{
+				background-color: #4cb9ad;
+				position: relative;
+				left: 2px;
+				top: 2px;
+			}
+
+			#comment_box:hover {
+			    background-color: lightyellow;
+			}
+
+			#comment_box:focus {
+			    background-color: lightyellow;
+			}
+
+			#buttons{
+				display:  flex;
+				justify-content: right;
+				gap: 20px;
+			}
+
+			#edit_button{
+				text-align: center;
+				text-decoration: none;
+				background-color: rgb(71, 57, 92);
+				color: white;
+				font-size: 20px;
+				border: none;
+				padding: 10px;
+				width: 150px;
+				margin: 20px;
+			}
+
+			#edit_button:hover{
+				background-color: #4cb9ad;
+				color: rgb(37, 26, 38);
+				transition:  0.25s;
+			}
+			.tags{
+				display: flex;
+				gap: 20px;
+				margin: 20px;
+
+			}
+
+			.tags a{
+				color: rgb(180, 157, 180);
+				text-decoration: none;
+			}
+
+			.tags a:hover{
+				color: rgb(234, 66, 121);
+			}
+        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+
+	<body>
+		<!--HEADER PART-->
+		<div class = "myHeader">
+
+			<!--LEFT-->
+			<div class = "burger_menu">
+				<div id = "nav_menu">
+					<i class="fa fa-bars"></i>
+				</div>
+				<!--BURGER MENU-->
+				<div id ="burger_contents_div">
+					<i class="fa fa-bars"></i>
+					<img src = "../../web_logo.png" width = 120px class = "menu_logo">
+					<div id = "burger_contents">
+						<a href="./home.html">Home</a>
+						<a href="#">About Us</a>
+						<a href="#">Contact Us</a>
+						<a href="#">Terms of Service</a>
+						<a href="#">Privacy Policy</a>
+					</div>
+					<div id = "menu_design">
+						<img src = "../../menu_design.png" id = "menu_art">
+						<p>pixDev @ 2022</p>
+					</div>
+				</div>
+			</div>
+			
+			<a href="home.html"><img src = "../../web_logo.png" width = 120px class = "logo"></a>
+
+			<form class = "search">
+				<input type = "text" placeholder = "Search..." name = "search_bar" class = "search_box">
+			</form>
+
+			<a href = "submit_art.html" class = "button">Submit</a>
+
+			<!--RIGHT-->
+			<div class = "dropdown_menu">
+				<div id = "user_menu">
+					<h3 id = "username" style = "color: white;">froggycutie123</h3>
+
+					<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.reptilecentre.com%2Fsites%2FReptile%2Fimg%2Fcategory-header%2Fwhite-tree-frog-care.jpg&f=1&nofb=1" id = "avatar">
+				</div>
+
+				<!-- DROPDOWN MENU -->
+				<div id ="dropdown_contents">
+					<a href="./froggycutie123/froggycutie123.html">Profile</a>
+					<a href="./froggycutie123/froggycutie123_gallery_most_recent.html">Gallery</a>
+					<a href="./froggycutie123/froggycutie123_favourites_most_recent.html">Favourites</a>
+					<a href="user_settings.html">Settings</a>
+					<a href="../../Non-User/home.html">Log out</a>
+				</div>
+			</div>
+			<a href = "#" id="to_top_button"><i class ="fa fa-arrow-up"></i></a>
+			
+		</div>
+		<!--BODY DIVISION-->
+		<div class = "display">
+
+			<h1>Frog Booty</h1>
+
+			<div class = "division">
+				<div id = "artwork">
+					<img src="https://static1.e621.net/data/sample/da/56/da567ae2e711c0a21897d153a35b072f.jpg">
+				</div>
+
+				<p class = "description">I got blocked by <a href="./gekkouga-san/gekkouga-san.html">@gre658</a> recently LOL what a p***y</p>
+
+				<div class = "user_display">
+					<img src = "./charizard/avatar.png">
+
+					<a href = "./charizard/charizard.html"><h3 id = "username_profile">charizard</h3></a>
+					<h5>@charcool006</h5>
+
+					<div id="statistics">
+						<div id="date">
+							<span>May 17, 2022</span>
+						</div>
+
+						<div id="time">
+							<span>2:03</span>
+						</div>
+
+						<div id="favourites">
+							<i class="fa fa-heart"></i>
+							<span>69</span>
+						</div>
+
+						<div id="comment">
+							<i class="fa fa-comment"></i>
+							<span>12</span>
+						</div>
+						
+
+						<div id="views">
+							<i class="fa fa-eye"></i>
+							<span>4200</span>
+						</div>
+					</div>
+				</div>
+				<div class = "tags">
+					<div>
+						<a href = "#">#thisiswhatyouget</a>
+					</div>
+					<div>
+						<a href = "#">#butt</a>
+					</div>
+					<div>
+						<a href = "#">#bigbutt</a>
+					</div>
+					<div>
+						<a href = "#">#thicc</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--COMMENT SECTION-->
+		<div class = "comment_box">
+			<h2>Comments</h2>
+		</div>
+
+		<div class = "comments">
+			<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.reptilecentre.com%2Fsites%2FReptile%2Fimg%2Fcategory-header%2Fwhite-tree-frog-care.jpg&f=1&nofb=1">
+			<a href = "./froggycutie123/froggycutie123.html"><h3 class = "username_responses">froggycutie123</h3></a>
+
+			<form action="/html/tags/html_form_tag_action.cfm" method="post">
+				<textarea name="comments" id = "comment_box" placeholder="Leave a comment">
+				</textarea>
+				<div class = "button_submit">
+					<input type="submit" value="Post" id = "submit_button">
+				</div>
+			</form>
+			
+		</div>
+
+		<div class = "comments">
+			<img src = "./charizard/friend_avatar.png">
+			<a href = "#"><h3 class = "username_responses">venusaur</h3></a>
+			<p id = "responses">LOOOOOOOOOL</p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:27</p></div>
+				<div><a href = "#">Reply</a></div>
+			</div>
+		</div>
+
+		<div class = "comments">
+			<img src = "./charizard/friend_avatar2.png">
+			<a href = "#"><h3 class = "username_responses">blastoise</h3></a>
+			<p id = "responses">bootyful</p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:27</p></div>
+				<div><a href = "#">Reply</a></div>
+			</div>
+		</div>
+
+		<div class = "comments">
+			<img src = "./charizard/friend_avatar4.png">
+			<a href = "#"><h3 class = "username_responses">cheetoz</h3></a>
+			<p id = "responses">bruh</p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:27</p></div>
+				<div><a href = "#">Reply</a></div>
+			</div>
+		</div>
+
+		<div class = "comments">
+			<img src = "./gekkouga-san/friend_avatar.png">
+			<a href = "#"><h3 class = "username_responses">brigaron</h3></a>
+			<p id = "responses">After getting blocked, which you definitely deserved for the nonstop harassment, what's this all of a sudden? You're not helping the case. You're just here looking for more attention.</p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:27</p></div>
+				<div><a href = "#">Reply</a></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "./charizard/avatar.png">
+			<a href = "./charizard/charizard.html"><h3 class = "username_responses">charizard</h3></a>
+			<p id = "responses">If there's one thing idiots like you are good at, it's that it's impossible to argue with them.</p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:32</p></div>
+				<div><a href = "#">Reply</a></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "./gekkouga-san/friend_avatar.png">
+			<a href = "#"><h3 class = "username_responses">brigaron</h3></a>
+			<p id = "responses">Seriously?! Aren't you satisfied with the results already? Take this **** down! You're disrespecting them.</p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:32</p></div>
+				<div><a href = "#">Reply</a></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "./charizard/avatar.png">
+			<a href = "./charizard/charizard.html"><h3 class = "username_responses">charizard</h3></a>
+			<p id = "responses">Buddy, why don't you just click the back button and do something else? You're only here for a fight that you can't win.</p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:32</p></div>
+				<div><a href = "#">Reply</a></div>
+			</div>
+		</div>
+
+		<div class = "comments">
+			<img src = "./charizard/enemy_avatar.png">
+			<a href = "#"><h3 class = "username_responses">bulletseed254</h3></a>
+			<p id = "responses"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.rebelmouse.io%2FeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8xNDgxMjY2Mi9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTYyMTI3MTM5NH0.6IueCe5geJ01FYZJv7THSNExe18Vrw1CYJEw4zIC5S0%2Fimg.jpg%3Fwidth%3D1200%26height%3D628&f=1&nofb=1" style = "width: 300px; height: auto;"><br><br><br><br><br><br><br></p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:27</p></div>
+				<div><a href = "#">Reply</a></div>
+			</div>
+		</div>
+
+		<div class = "comments">
+			<img src = "./charizard/friend_avatar3.png">
+			<a href = "#"><h3 class = "username_responses">intel-eon</h3></a>
+			<p id = "responses">nice</p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:27</p></div>
+				<div><a href = "#">Reply</a></div>
+			</div>
+		</div>
+
+		<div class = "comments">
+			<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fyt3.ggpht.com%2Fa%2FAATXAJzrpwZJs5j0Uu-5SpgWat5Ocv0pEq0BpH5ryg%3Ds900-c-k-c0xffffffff-no-rj-mo&f=1&nofb=1">
+			<a href = "#"><h3 class = "username_responses">wisecrack</h3></a>
+			<p id = "responses">Sir, this is a Wendy's.</p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:27</p></div>
+				<div><a href = "#">Reply</a></div>
+			</div>
+		</div>
+
+		<div class = "comments">
+			<img src = "https://static1.e621.net/data/sample/fe/ba/feba12b1a8594cce4c3ba9ffd0338198.jpg">
+			<a href = "#"><h3 class = "username_responses">molito</h3></a>
+			<p id = "responses">Hot!</p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:27</p></div>
+				<div><a href = "#">Reply</a></div>
+			</div>
+		</div>
+
+		<div class = "comments">
+			<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F2e%2F14%2F4b%2F2e144b19e4af46feda8bbbabf0a649b4.jpg&f=1&nofb=1">
+			<a href = "#"><h3 class = "username_responses">fairytailgurl</h3></a>
+			<p id = "responses">What happened? Why did they block you?</p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:27</p></div>
+				<div><a href = "#">Reply</a></div>
+			</div>
+		</div>
+
+		<div class = "replies">
+			<img src = "./charizard/avatar.png">
+			<a href = "./charizard/charizard.html"><h3 class = "username_responses">charizard</h3></a>
+			<p id = "responses">sent you a pm</p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:32</p></div>
+				<div><a href = "#">Reply</a></div>
+			</div>
+		</div>
+
+		<div class = "comments">
+			<img src = "./charizard/friend_avatar5.png">
+			<a href = "#"><h3 class = "username_responses">gatrman</h3></a>
+			<p id = "responses">What a masterpiece not even Picasso stands a chance on this banger</p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:27</p></div>
+				<div><a href = "#">Reply</a></div>
+			</div>
+		</div>
+
+		<div class = "comments">
+			<img src = "https://i.pinimg.com/originals/f6/c7/62/f6c762203beea5b6fc23329403b844e1.gif">
+			<a href = "#"><h3 class = "username_responses">blazekick</h3></a>
+			<p id = "responses">You sir are a legend!</p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:27</p></div>
+				<div><a href = "#">Reply</a></div>
+			</div>
+		</div>
+
+		<div class = "comments">
+			<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp4975817.jpg&f=1&nofb=1">
+			<a href = "#"><h3 class = "username_responses">rillakaboom</h3></a>
+			<p id = "responses">Neat!</p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:27</p></div>
+				<div><a href = "#">Reply</a></div>
+			</div>
+		</div>
+
+		<div class = "comments">
+			<img src = "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimg.pokemondb.net%2Fsprites%2Fblack-white%2Fanim%2Fnormal%2Fsamurott.gif&f=1&nofb=1">
+			<a href = "#"><h3 class = "username_responses">samurott</h3></a>
+			<p id = "responses">Get this **** off the front page</p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:27</p></div>
+				<div><a href = "#">Reply</a></div>
+			</div>
+		</div>
+
+		<div class = "comments">
+			<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpm1.narvii.com%2F5833%2Fa7b5a78a72c2548fb8715871f792203aa4ea7437_hq.jpg&f=1&nofb=1">
+			<a href = "#"><h3 class = "username_responses">chelterrar</h3></a>
+			<p id = "responses">lmao</p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:27</p></div>
+				<div><a href = "#">Reply</a></div>
+			</div>
+		</div>
+
+		<div class = "comments">
+			<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fyt3.ggpht.com%2Fa%2FAGF-l787yNuMDc-S7epmjqKpYdg6FXYuZjSe6CuaTA%3Ds900-c-k-c0xffffffff-no-rj-mo&f=1&nofb=1">
+			<a href = "#"><h3 class = "username_responses">ev</h3></a>
+			<p id = "responses">why...</p>
+			<div class = "comment_options">
+				<div><p>March 11, 2022</p></div>
+				<div><p>4:27</p></div>
+				<div><a href = "#">Reply</a></div>
+			</div>
+		</div>
+		<!--FOOTER PART-->
+		<div class = "myFooter">
+			<p>pixDev @ 2022</p>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>pixDEV</title>
+		<link rel="icon" type="image/x-icon" href="../../favicon.ico">
+		<style>
+			.division{
+				display: flex;
+			}
+			
+			.left_div{
+				display: block;
+				width: 30%;
+				padding: 30px;
+			}
+
+			.right_div{
+				display: block;
+				width: 70%;
+				padding: 30px;
+			}
+
+			#photo_submission{
+				width: 280px;
+				height: 280px;
+				object-fit: cover;
+				margin-left: 12px;
+			}
+
+			#buttons{
+				display:  flex;
+				justify-content: right;
+				gap: 20px;
+				position: static;
+			}
+
+			#myfile{
+				display: none;
+			}
+
+			#button{
+				display: flex;
+				padding: 10px;
+				cursor: pointer;
+				background-color: #4cb9ad;
+				color: white;
+				justify-content: center;
+				margin: 20px;
+				margin-left: 12px;
+				margin-right: 12px;
+				font-size: 20px;
+			}
+
+			#button:hover{
+				background-color: rgb(234, 66, 121);
+				transition-duration: 0.25s;
+			}
+
+			#button i{
+				font-size: 24px;
+				margin-right: 10px;
+				margin-left: 10px;
+				margin-top: 3px;
+			}
+
+			.reminder{
+				color:  white;
+				text-align: center;
+				margin-right: 10px;
+				margin-left: 10px;
+				margin-bottom: 10px;
+			}
+
+			.notes{
+				color: rgb(234, 66, 121);
+				text-align: center;
+				margin-right: 10px;
+				margin-left: 10px;
+			}
+
+			.title_box, #description_box, .tag_box{
+				width: 100%;
+				margin-bottom: 10px;
+				margin-top: 10px;
+				padding: 10px;
+			}
+
+			.title_box:hover, #description_box:hover, .tag_box:hover{
+				background-color: lightyellow;
+			}
+
+			.title_box:active, #description_box:active, .tag_box:active{
+				background-color: lightyellow;
+			}
+
+			#description_box{
+				height: 200px;
+			}
+
+			#cancel_button{
+				margin-top: 20px;
+				text-align: center;
+				text-decoration: none;
+				background-color: rgb(71, 57, 92);
+				color: white;
+				font-size: 20px;
+				border: none;
+				padding: 10px;
+				width: 150px;
+			}
+
+			#cancel_button:hover{
+				background-color: #4cb9ad;
+				color: rgb(37, 26, 38);
+				transition:  0.25s;
+			}
+
+			.submit{
+				margin-top: 20px;
+				text-align: center;
+				text-decoration: none;
+				background-color: rgb(234, 66, 121);
+				color: white;
+				font-size: 20px;
+				border: none;
+				padding: 10px;
+				width: 150px;
+				cursor: pointer;	
+			}
+
+			.submit:hover{
+				background-color: rgb(180, 54, 128);
+				color: white;
+				transition:  0.25s;				
+			}
+
+			input[type = text]:focus {
+			    background-color: lightyellow;
+			}
+
+			#mature_filters{
+				width: 100px;
+				padding: 10px;
+				border: 2px solid rgb(71, 57, 92);
+				cursor: pointer;
+				font-size: 20px;
+			}
+
+			#mature_filters:hover{
+				background-color: lightyellow;
+			}
+
+			.maturity_rating_section{
+				width: 100%;
+				margin: 20px 0 20px 0;
+				color: white;
+			}
+
+			.maturity_rating_section td{
+				font-size: 20px;
+			}
+
+			.right_column{
+				text-align: right;
+			}
+
+		</style>
+		<!-- Insert external CSS file here -->
+        <link rel = "stylesheet" href = "../../pixDEV_style_dark.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+
+	<body>
+		<!--HEADER PART-->
+		<div class = "myHeader">
+
+			<!--LEFT-->
+			<div class = "burger_menu">
+				<div id = "nav_menu">
+					<i class="fa fa-bars"></i>
+				</div>
+				<!--BURGER MENU-->
+				<div id ="burger_contents_div">
+					<i class="fa fa-bars"></i>
+					<img src = "../../web_logo.png" width = 120px class = "menu_logo">
+					<div id = "burger_contents">
+						<a href="./home.html">Home</a>
+						<a href="#">About Us</a>
+						<a href="#">Contact Us</a>
+						<a href="#">Terms of Service</a>
+						<a href="#">Privacy Policy</a>
+					</div>
+					<div id = "menu_design">
+						<img src = "../../menu_design.png" id = "menu_art">
+						<p>pixDev @ 2022</p>
+					</div>
+				</div>
+			</div>
+			
+			<a href="home.html"><img src = "../../web_logo.png" width = 120px class = "logo"></a>
+
+			<form class = "search">
+				<input type = "text" placeholder = "Search..." name = "search_bar" class = "search_box">
+			</form>
+
+			<a href = "submit_art.html" class = "button">Submit</a>
+
+			<!--RIGHT-->
+			<div class = "dropdown_menu">
+				<div id = "user_menu">
+					<h3 id = "username" style = "color: white;">froggycutie123</h3>
+
+					<img src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.reptilecentre.com%2Fsites%2FReptile%2Fimg%2Fcategory-header%2Fwhite-tree-frog-care.jpg&f=1&nofb=1" id = "avatar">
+				</div>
+
+				<!-- DROPDOWN MENU -->
+				<div id ="dropdown_contents">
+					<a href="./froggycutie123/froggycutie123.html">Profile</a>
+					<a href="./froggycutie123/froggycutie123_gallery_most_recent.html">Gallery</a>
+					<a href="./froggycutie123/froggycutie123_favourites_most_recent.html">Favourites</a>
+					<a href="user_settings.html">Settings</a>
+					<a href="../../Non-User/home.html">Log out</a>
+				</div>
+			</div>
+
+			<a href = "#" id="to_top_button"><i class ="fa fa-arrow-up"></i></a>
+			
+		</div>
+		<!--BODY DIVISION-->
+		<div class = "display">
+			<h1>Submit Art</h1>
+			<div class = "division">
+				<div class = "left_div">
+					<img src="https://www.royalcontainers.com/wp-content/uploads/2016/09/placeholder.png" id = "photo_submission">
+
+					<!--BROWSE FILES-->
+					<form action="/action_page.php">
+						<label id="button">
+							<input type="file" id="myfile" name="myfile"><i class ="fa fa-folder-open"></i>Select files
+						</label>
+					</form>
+
+					<p class = "reminder">Allowable: JPEG, PNG, GIF</p>
+					<p class = "notes">You can only upload up to 32 Mb per file and a maximum of 10 files<br>(total file size must be below 200 Mb)</p>
+				</div>
+
+				<div class = "right_div">
+					<!-- INPUT FIELDS-->
+					<form class = "title_field">
+						<input type = "text" placeholder = "Title" name = "title_field" class = "title_box">
+					</form>
+
+					<form action="/html/tags/html_form_tag_action.cfm" method="post">
+						<textarea name="description" id = "description_box" placeholder = "Description">
+						</textarea>
+					</form>
+
+					<form class = "tag_field">
+						<input type = "text" placeholder = "tags" name = "tags" class = "tag_box">
+					</form>
+
+					<table class = "maturity_rating_section">
+						<tr>
+							<td>Mature Filter</td>
+							<td class = "right_column">
+								<select name="mature_filters" id = "mature_filters">
+									<option value="no" class = "choice">No</option>
+									<option value="yes" class = "choice">Yes</option>
+								</select>
+							</td>
+						</tr>
+					</table>
+
+					<!-- BUTTONS -->
+					<div id = "buttons">
+						<a href = "home.html" id = "cancel_button">Cancel</a>
+						<button class="submit" type="submit">Submit</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--FOOTER PART-->
+		<div class = "myFooter">
+			<p>pixDev @ 2022</p>
+		</div>
+	</body>
+
+</html>
